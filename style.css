@@ -1,0 +1,139 @@
+/*
+Theme Name: Blank
+Theme URI: http://inspyregroup.com
+Description: A Modular Theme.
+Author: Nicholas Koskowski, Inspyre Group
+Version: 1.0
+Tags: awesome
+*/
+
+/* Systemic */
+
+* {box-sizing:border-box;}
+body {background-color: #EEE; font-family: 'Roboto', sans-serif;}
+
+a {color: inherit; text-decoration: none;}
+
+h1,h2,h3,h4,h5,h6 {margin:0px; font-family: 'Roboto Condensed', sans-serif;}
+h1 {font-size: 26px;}
+h2 {font-size: 24px;}
+h3 {font-size: 22px;}
+h4 {font-size: 20px;}
+h5 {font-size: 18px;}
+h6 {font-size: 16px;}
+p,li,label,input,i,strong,b,em {font-size: 16px;}
+label {display:inline-block; min-width:50px;}
+
+input[type=text], input[type=password], input[type=email] {padding:10px; margin-top: 10px; margin-bottom: 10px;}
+input[type=submit], button, .btn {display: inline-block; padding:10px 15px; font-size: 16px; border:2px solid; font-family: 'Roboto Condensed', sans-serif; font-weight: bold; text-transform: uppercase; background-color: transparent;}
+
+input[type="radio"] {margin-left: 10px; margin-right: 10px;}
+textarea {width: 320px;}
+
+.container {max-width: 1160px; margin-left: auto; margin-right: auto;}
+
+.col-wrap {font-size: 0;}
+.column {display: inline-block;vertical-align: top;}
+
+.white-wrap {background-color: #fff; border:1px solid #ddd;}
+
+.talignleft {text-align: left;}
+.talignright {text-align: right;}
+.taligncenter {text-align: center;}
+
+.alignleft {float: left;}
+.alignright {float: right;}
+
+.full {width: 100%;}
+.two-thirds {width: 75%;}
+.three-fourths {width: 66.666%;}
+.half {width: 50%;}
+.third {width: 33.333%;}
+.fourth {width: 25%;}
+.fifth {width: 20%;}
+
+.btn.red {border-color:#932637; color:#932637; }
+.btn.blue {border-color:#007399; color:#007399;}
+.btn.yellow {border-color:#C0B906; color:#C0B906;}
+.btn.green {border-color:#269340; color:#269340;}
+
+/* Header */
+
+header {width: 100%; background-image:url('images/aztek-top-bg.jpg'); background-repeat: repeat-x; padding:20px 10px;}
+
+header .logo {padding-top:20px; padding-bottom:20px;}
+
+header nav {display: inline-block; vertical-align: top; font-size: 18px; color:#000; font-family: 'Roboto Condensed', sans-serif; padding-top: 10px;}
+header nav ul {padding:0px; margin:0px; padding-right: 15px;}
+header nav ul li {display: inline-block; vertical-align: top; text-transform: uppercase; padding:10px 15px;}
+
+header .top-menu {color:#888; font-size: 14px; padding-right:0px;}
+header .top-menu li {border-right:1px solid #888; padding:5px 25px;}
+header .top-menu li:last-of-type {border-right:0px;}
+
+header .cart {display:inline-block; position: relative; text-align: center; color:#fff; width: 64px; height:82px; background-color: #000; padding:15px 10px; font-size:28px; margin-top: -20px;}
+header .cart p {margin:0px;}
+header .cart .bot {position:absolute; left:0px; bottom:-14px; z-index: 99999;}
+
+/* Main */
+
+.title {text-align: center;}
+.title h2 {text-transform:uppercase; border-bottom:1px solid #000; border-top:1px solid #000; display: inline-block; padding:5px 45px;}
+
+.slider {width: 100%; overflow: hidden;}
+.slider .slide {position: relative; text-align: center;}
+.slider .slide .overlay {color:#fff; width: 100%; position: absolute; text-align: center; top:35%;}
+.slider .overlay .content {display: inline-block; background-color: rgba(0,0,0,0.55); font-family: 'Roboto Condensed', sans-serif; padding:25px; text-transform: uppercase;}
+.slider .overlay .content h2 {border-bottom:3px solid #fff; margin:0px; padding-bottom:15px;}
+.slider .slide img {width: 100%; height: auto;}
+.slick-slider {margin-bottom: 0px !important;}
+
+.slider-load-bar {width: 100%; height:8px;}
+.progress {width: 0px; height:8px; background-color:#007098;}
+
+.overlays .column {overflow: hidden; padding:15px; position: relative;}
+.overlays .column .overlay { display: inline-block; text-transform: uppercase; font-family: 'Roboto Condensed', sans-serif; position: absolute; top:0px; left:0px; color: #fff; text-align: center; width: 100%; height: 100%; padding: 15px;}
+.overlays .column .overlay .content {border:3px solid rgba(255,255,255,0.55); padding:2px; display: inline-block; max-width:75%; margin-top:25px;}
+.overlays .third .overlay .content {margin-top:55px;}
+.overlays .half .overlay .content {margin-top:95px;}
+.overlays .column .overlay .content h2 {font-size: 18px; border-bottom:2px solid; padding-bottom:6px;}
+.overlays .column .overlay .content h2.red {border-color:#932637;}
+.overlays .column .overlay .content h2.blue {border-color:#007399;}
+.overlays .column .overlay .content h2.yellow {border-color:#C0B906;}
+.overlays .column .overlay .content h2.green {border-color:#269340;}
+.overlays .column .overlay .content p {font-size: 14px;}
+.overlays .column img {width: 100%;}
+
+.blog-slider .third {padding: 15px;}
+
+.info .column {padding: 15px;}
+.info p {font-size: 14px;}
+
+.post {padding: 15px;}
+.post h3 {font-size:20px; text-transform: uppercase;}
+.post p {font-size: 16px;}
+.post small {color: #888; font-size: 14px;}
+.post img {width: 100%; padding-bottom:10px;}
+
+/* Combinator */
+
+.screen {width: 100%; min-height:560px; background-image:url('images/slide1.jpg'); background-size:cover;}
+
+.question {display: none; color: #fff; background-color: rgba(0,0,0,0.50); padding:40px;}
+.question h2 {margin-bottom: 20px;}
+.question:first-of-type {display:inline-block;}
+
+
+/* Footer */
+footer {border-top:1px solid #ccc; padding:20px 0px;}
+footer nav ul {padding: 0px; margin:0px; color:#888; font-size: 14px;}
+footer nav ul li {display: inline-block; text-transform: uppercase; font-family: 'Roboto Condensed', sans-serif; vertical-align: top; border-right:1px solid #888; padding:5px 25px;}
+footer nav ul li:last-of-type {border-right:0px;}
+
+footer .social-media {font-size:32px;}
+footer .social-media i {padding-left:20px;}
+
+footer .copyright {padding-left: 15px;}
+
+
+
