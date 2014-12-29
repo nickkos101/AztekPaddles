@@ -42,138 +42,235 @@
     <main>
       <div class="screen">
         <div class="container">
-            <div class="question">
-                <h2>Desired Use:</h2>
-                <label>Flat Water</label>
-                <input type="radio">
-                <label>Surfing</label>
-                <input type="radio">
-                <label>Racing</label>
-                <input type="radio">
+            <div class="total-bar">
+                Question <span class="startQuestion">1</span>/<span class="totalQuestion">12</span>
             </div>
-            <div class="question">
-                <h2>Skill Level:</h2>
-                <label>Beginner</label>
-                <input type="radio">
-                <label>Intermediate</label>
-                <input type="radio">
-                <label>Advanced</label>
-                <input type="radio">
-            </div>
-            <div class="question">
-                <h2>Paddling Style:</h2>
-                <label>Slow</label>
-                <input type="radio">
-                <label>Medium</label>
-                <input type="radio">
-                <label>Fast</label>
-                <input type="radio">
-            </div>
-            <div class="question">
-                <h2>Do you have a current paddle?</h2>
-                <select>
-                    <option>Quickblade</option>
-                    <option>Kenalu</option>
-                    <option>Laird</option>
-                    <option>I dont have one</option>
-                </select>
-                <br/>
-                <label>Paddle Size - Length:</label>
-                <input type="text">
-                <br/>
-                <label>Board Size - Length</label>
-                <input type="text">
-            </div>
-            <div class="question">
-                <h2>What do you like/dislike about your current paddle?</h2>
-                <textarea></textarea>
-            </div>
-            <div class="question">
-                <h2>Gender:</h2>
-                <label>Male</label>
-                <input type="radio">
-                <label>Female</label>
-                <input type="radio">
-            </div>
-            <div class="question">
-                <h2>Age:</h2>
-                <select>
-                    <option>15</option>
-                    <option>15-45</option>
-                    <option>46-64</option>
-                    <option>65+</option>
-                </select>
-            </div>
-            <div class="question">
-                <h2>Height:</h2>
-                <select>
-                    <option>4"</option>
-                    <option>4' 1"</option>
-                    <option>4' 2"</option>
-                    <option>4' 3"</option>
-                    <option>4' 5"</option>
-                    <option>4' 6"</option>
-                    <option>4' 7"</option>
-                    <option>4' 8"</option>
-                    <option>4' 9"</option>
-                    <option>4' 10"</option>
-                    <option>4' 11"</option>
-                </select>
-            </div>
-            <div class="question">
-                <h2>Enter your weight:</h2>
-                <input type="number">
-            </div>
-            <div class="question">
-                <h2>Board Thickness:</h2>
-                <select>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-            </div>
-            <div class="question">
-                <h2>Hand Size:</h2>
-                <select>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-            </div>
-            <div class="question">
-                <h2>How did you hear about Aztek Paddles?</h2>
-                <select>
-                    <option>Online Ad</option>
-                    <option>Blog</option>
-                    <option>Banner</option>
-                    <option>Friend</option>
-                    <option>Race/Event</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="question">
-                <h2>How did you hear about Aztek Paddles?</h2>
-                <select>
-                    <option>Online Ad</option>
-                    <option>Blog</option>
-                    <option>Banner</option>
-                    <option>Friend</option>
-                    <option>Race/Event</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="question taligncenter">
-                <img src="images/paddle.png">
-                <h2>Our Paddle Recomendation: XHR4INCH</h2>
-                <p>This paddle is so rad, all my friends tell me dude bro, you have to white water rapids with this!</p>
-                <button>Order Now</button>
+            <form>
+                <div class="question">
+                    <h2>How will you use your paddle?</h2>
+                    <div class="col-wrap taligncenter">
+                        <div class="third column">
+                            <button class="btn-a" class="paddleuse" name="paddleuse" value="flat">
+                                <img class="thumb" src="http://www.standuppaddleboardingguide.com/images/flat_water_paddling_3.jpg">
+                                <p>Flat Water</p>
+                            </button>
+                        </div>
+                        <div class="third column">
+                            <button class="btn-a" class="paddleuse" name="paddleuse" value="surf">
+                                <img class="thumb" src="http://surfingsports.com/images/naish_wahines1.jpg">
+                                <p>Surfing</p>
+                            </button>
+                        </div>
+                        <div class="third column">
+                            <button class="btn-a" class="paddleuse" name="paddleuse" value="race">
+                                <img class="thumb" src="http://www.supracer.com/wp-content/uploads/2012/05/The-SUP-Race-Cup-France-5.jpg">
+                                <p>Racing</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <h2>What is your Skill Level?</h2>
+                    <div class="col-wrap taligncenter">
+                        <div class="third column">
+                            <button class="btn-a" name="skilllvl" value="beginner">
+                                <img src="images/a-green.png">
+                                <p>Beginner</p>
+                            </button>
+                        </div>
+                        <div class="third column">
+                            <button class="btn-a" name="skilllvl" value="intermediate">
+                                <img src="images/a-blue.png">
+                                <p>Intermediate</p>
+                            </button>
+                        </div>
+                        <div class="third column">
+                            <button class="btn-a" name="skilllvl" value="beginner">
+                                <img src="images/a-red.png">
+                                <p>Experienced</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <h2>Now the basics - what are you?</h2>
+                    <div class="col-wrap taligncenter">
+                        <div class="half column">
+                           <button class="btn-a" name="gender" value="female">
+                            <img src="images/a-pink.png">
+                            <p>Female</p>
+                        </button>
+                    </div>
+                    <div class="half column">
+                       <button class="btn-a" name="gender" value="male">
+                        <img src="images/a-blue.png">
+                        <p>Male</p>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="combinator-load-bar">
-        <div class="progress">
+        <div class="question">
+            <div class="col-wrap taligncenter">
+                <div class="half column">
+                    <h2>How old are you?</h2>
+                    <select name="age">
+                        <option value="15">15</option>
+                        <option value="15-45">15-45</option>
+                        <option value="45-64">46-64</option>
+                        <option value="65+">65+</option>
+                    </select>
+                </div>
+            </div>
         </div>
+        <div class="question">
+            <div class="col-wrap taligncenter">
+                <div class="half column">
+                    <h2>How tall are you?</h2>
+                    <select class="tall" name="tall">
+                        <option value="4">4"</option>
+                        <option value="4-1">4' 1"</option>
+                        <option value="4-2">4' 2"</option>
+                        <option value="4-3">4' 3"</option>
+                        <option value="4-4">4' 4"</option>
+                        <option value="4-5">4' 5"</option>
+                        <option value="4-6">4' 6"</option>
+                        <option value="4-7">4' 7"</option>
+                        <option value="4-8">4' 8"</option>
+                        <option value="4-9">4' 9"</option>
+                        <option value="4-10">4' 10"</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="col-wrap taligncenter">
+                <div class="half column">
+                    <h2>How much do you weigh? (It's just for science, we swear!)</h2>
+                    <input type="number" name="weight"><label>lbs</label>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <h2>How do you paddle?</h2>
+            <div class="col-wrap taligncenter">
+                <div class="third column">
+                    <button class="btn-a" name="paddlespeed" value="slow">
+                        <img src="images/a-green.png">
+                        <p>Slow</p>
+                    </button>
+                </div>
+                <div class="third column">
+                    <button class="btn-a" name="paddlespeed" value="medium">
+                        <img src="images/a-blue.png">
+                        <p>Medium</p>
+                    </button>
+                </div>
+                <div class="third column">
+                    <button class="btn-a" name="paddlespeed" value="fast">
+                        <img src="images/a-red.png">
+                        <p>Fast</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <h2>How thick is your current board?</h2>
+            <div class="col-wrap taligncenter">
+                <div class="third column">
+                    <button class="btn-a" name="boardthickness" value="thin">
+                        <img src="images/a-blue.png">
+                        <p>Thin</p>
+                    </button>
+                </div>
+                <div class="third column">
+                    <button class="btn-a" name="boardthickness" value="thick">
+                        <img src="images/a-red.png">
+                        <p>Thick</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <h2>How big are your hands?</h2>
+            <div class="col-wrap taligncenter">
+                <div class="third column">
+                    <button class="btn-a" name="handsize" value="small">
+                        <img src="images/a-green.png">
+                        <p>Small</p>
+                    </button>
+                </div>
+                <div class="third column">
+                    <button class="btn-a" name="handsize" value="medium">
+                        <img src="images/a-blue.png">
+                        <p>Average</p>
+                    </button>
+                </div>
+                <div class="third column">
+                    <button class="btn-a" name="handsize" value="large">
+                        <img src="images/a-red.png">
+                        <p>Large</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="question">
+            <h2 class="subquest">Do you have a current paddle?</h2>
+            <div class="col-wrap taligncenter">
+                <div class="third column">
+                    <select class="existing" name="existing">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                    <div class="subquestion">
+                        <select>
+                            <option>Quickblade</option>
+                            <option>Kenalu</option>
+                            <option>Laird</option>
+                            <option>I dont have one</option>
+                        </select>
+                    </div>
+                    <div class="subquestion">
+                        <label>Paddle Size - Length:</label>
+                        <input type="text">
+                    </div>
+                    <div class="subquestion">
+                        <label>Board Size - Length</label>
+                        <input type="text">
+                    </div>
+                    <div class="subquestion">
+                        <label>What do you like/dislike about your current paddle?</label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="subquestion">
+                        <label>How did you hear about Aztek Paddles?</label>
+                        <select>
+                            <option>Online Ad</option>
+                            <option>Blog</option>
+                            <option>Banner</option>
+                            <option>Friend</option>
+                            <option>Race/Event</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="question taligncenter">
+            <img src="images/paddle.png">
+            <h2>Our Paddle Recomendation: Product Name Here</h2>
+            <ul>
+                <li>Blade Type: <span class="bladetype"></span></li>
+                <li>Shaft Length: <span class="shaftlength"></span> inches</li>
+            </ul>
+            <button>Order Now</button>
+        </div>
+    </form>
+</div>
+</div>
+<div class="combinator-load-bar">
+    <div class="progress">
     </div>
+</div>
 </main>
 <div class="container">
     <footer>

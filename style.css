@@ -21,12 +21,12 @@ h3 {font-size: 22px;}
 h4 {font-size: 20px;}
 h5 {font-size: 18px;}
 h6 {font-size: 16px;}
-p,li,label,input,i,strong,b,em {font-size: 16px;}
+p,li,label,input,i,strong,b,em,select,textarea {font-size: 16px;}
 label {display:inline-block; min-width:50px;}
 
-input[type=text], input[type=password], input[type=email] {padding:10px; margin-top: 10px; margin-bottom: 10px;}
+input[type=text], input[type=password], input[type=email], input[type=number] {padding:10px; margin-top: 10px; margin-bottom: 10px; color:#000;}
 input[type=submit], button, .btn {display: inline-block; padding:10px 15px; font-size: 16px; border:2px solid; font-family: 'Roboto Condensed', sans-serif; font-weight: bold; text-transform: uppercase; background-color: transparent;}
-
+select {color: #000;}
 input[type="radio"] {margin-left: 10px; margin-right: 10px;}
 textarea {width: 320px;}
 
@@ -117,14 +117,29 @@ header .cart .bot {position:absolute; left:0px; bottom:-14px; z-index: 99999;}
 
 /* Combinator */
 
-.screen {width: 100%; min-height:560px; background-image:url('images/slide1.jpg'); background-size:cover;}
+.screen {width: 100%; min-height:560px; background-color: #000; background-size:cover;}
 
-.question {display: none; color: #fff; background-color: rgba(0,0,0,0.50); padding:40px;}
+.screen .container {position: relative;}
+
+.total-bar {position: absolute; top:20px; right:20px; font-weight:bold; color:#fff;}
+
+.question {display: none; color: #fff; background-color:#000; padding:40px; min-width:100%; height:560px;}
 .question h2 {margin-bottom: 20px;}
 .question:first-of-type {display:inline-block;}
 
+.screen .row {padding-bottom:10px;}
+.screen button {border:none; padding:0px;}
+.thumb {width: 150px; height:100px; vertical-align: middle;}
+
+.screen .btn-a {text-align: center; background-color: #000; padding:20px 25px; margin-top:55px;}
+.btn-a p {margin: 0px; font-size: 32px;}
+.btn-a img {display:inline-block;}
+
+.subquestion {display: none;}
+.subquestion label {display: none;}
 
 /* Footer */
+
 footer {border-top:1px solid #ccc; padding:20px 0px;}
 footer nav ul {padding: 0px; margin:0px; color:#888; font-size: 14px;}
 footer nav ul li {display: inline-block; text-transform: uppercase; font-family: 'Roboto Condensed', sans-serif; vertical-align: top; border-right:1px solid #888; padding:5px 25px;}
