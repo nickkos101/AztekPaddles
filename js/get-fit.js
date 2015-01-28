@@ -33,7 +33,6 @@ jQuery('.male').click(function(){
 		gender = undefined;
 	}
 	validation();
-	console.log('Gender has been set to: '+gender);
 });
 
 jQuery('.female').click(function(){
@@ -44,7 +43,6 @@ jQuery('.female').click(function(){
 		gender = undefined;
 	}
 	validation();
-	console.log('Gender has been set to: '+gender);
 });
 
 //Age Input Map
@@ -52,7 +50,6 @@ jQuery('.female').click(function(){
 jQuery('.age .toolTip li').click(function(){
 	age = jQuery(this).val();
 	validation();
-	console.log('Age has been set to: '+age);
 });
 
 //Height Input Map
@@ -60,7 +57,6 @@ jQuery('.age .toolTip li').click(function(){
 jQuery('.height .toolTip li').click(function(){
 	height = jQuery(this).val();
 	validation();
-	console.log('Height has been set to: '+height);
 });
 
 //weight Input Map
@@ -68,7 +64,6 @@ jQuery('.height .toolTip li').click(function(){
 jQuery('.weight .toolTip li').click(function(){
 	weight = jQuery(this).val();
 	validation();
-	console.log('weight has been set to: '+weight);
 });
 
 //Hand Size Input Map
@@ -76,7 +71,6 @@ jQuery('.weight .toolTip li').click(function(){
 jQuery('.hand-size .toolTip li').click(function(){
 	handSize = jQuery(this).text();
 	validation();
-	console.log('Hand Size has been set to: '+handSize);
 });
 
 //Intended Use Input Map
@@ -89,7 +83,6 @@ jQuery('.surf').click(function(){
 		Surf = false;
 	}
 	validation();
-	console.log('Surf is'+Surf);
 });
 
 jQuery('.flat-water').click(function(){
@@ -100,7 +93,6 @@ jQuery('.flat-water').click(function(){
 		Flat_Water = false;
 	}
 	validation();
-	console.log('Flat_Water is'+Flat_Water);
 });
 
 jQuery('.race').click(function(){
@@ -111,7 +103,6 @@ jQuery('.race').click(function(){
 		Race = false;
 	}
 	validation();
-	console.log('Race is'+Race);
 });
 
 //Board Thickness Input Map
@@ -124,11 +115,13 @@ jQuery('.board-thickness button').click(function(){
 		boardThickness = undefined;
 	}
 	validation();
-	console.log('Board Thickness has been set to: '+boardThickness);
 });
 
 
-//Skill Level Input Map
+//Skill Level Input Map (Also set the values on load just because...)
+
+skillLevel =  jQuery('input[name=skilllvl]').val();
+paddleStyle =  jQuery('input[name=paddlestyle]').val();
 
 jQuery('input[name=skilllvl]').change(function(){
 	skillLevel = jQuery(this).val();
@@ -140,10 +133,7 @@ jQuery('input[name=skilllvl]').change(function(){
 jQuery('input[name=paddlestyle]').change(function(){
 	paddleStyle = jQuery(this).val();
 	validation();
-	console.log('Paddle Style has been set to: '+paddleStyle);
 });
-
-
 
 //Calculation Functions
 
@@ -151,25 +141,394 @@ function calculateHandleSize() {
 
 	var handleSize;
 
-	if (handSize == '< 4.5"') {
+	if (handSize == '< 3"') {
 		handleSize = 'Small';
 		return handleSize;
 	}
-	else if (handSize == '4.5" - 5.5"') {
+	else if (handSize == '3" - 3 ½') {
 		handleSize = 'Medium';
 		return handleSize;
 	}
-	else if (handSize == '5.5" - 6.5"') {
-		handleSize = 'Medium';
-		return handleSize;
-	}
-	else if (handSize == '6.5" +') {
+	else if (handSize == '> 3 ½"') {
 		handleSize = 'Large';
 		return handleSize;
 	}
 	else {
 		console.log('Something is wrong with handle size calculation.');
 	}
+}
+
+function calculateTotalPaddleLength() {
+
+	var totalPaddleLength;
+
+	//Calculate the Base Length based on Paddlers Height
+
+	if (height <= 45) {
+
+		if (Race == true) {
+			totalPaddleLength = 58;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 58;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 58;
+		}	
+
+	}
+
+	if (height == 46) {
+
+		if (Race == true) {
+			totalPaddleLength = 59;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 58;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 60;
+		}	
+
+	}
+
+	if (height == 47) {
+
+		if (Race == true) {
+			totalPaddleLength = 61;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 59;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 60;
+		}	
+
+	}
+
+	if (height == 48) {
+
+		if (Race == true) {
+			totalPaddleLength = 62;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 60;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 63;
+		}	
+
+	}
+
+	if (height == 49) {
+
+		if (Race == true) {
+			totalPaddleLength = 63;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 62;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 64;
+		}	
+
+	}
+
+	if (height == 410) {
+
+		if (Race == true) {
+			totalPaddleLength = 64;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 63;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 66;
+		}	
+
+	}
+
+	if (height == 411) {
+
+		if (Race == true) {
+			totalPaddleLength = 65;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 64;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 67;
+		}	
+
+	}
+
+	if (height == 5) {
+
+		if (Race == true) {
+			totalPaddleLength = 65;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 64;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 67;
+		}	
+
+	}
+	else if (height == 51) {
+
+		if (Race == true) {
+			totalPaddleLength = 67;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 66;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 69;
+		}	
+
+	}
+
+	else if (height == 52) {
+
+		if (Race == true) {
+			totalPaddleLength = 68;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 70;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 70;
+		}	
+
+	}
+
+	else if (height == 53) {
+
+		if (Race == true) {
+			totalPaddleLength = 69;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 68;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 71;
+		}	
+
+	}
+
+	else if (height == 54) {
+
+		if (Race == true) {
+			totalPaddleLength = 70;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 69;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 72;
+		}	
+
+	}
+
+	else if (height == 55) {
+
+		if (Race == true) {
+			totalPaddleLength = 72;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 70;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 73;
+		}	
+
+	}
+
+	else if (height == 56) {
+
+		if (Race == true) {
+			totalPaddleLength = 73;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 71;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 75;
+		}	
+
+	}
+
+	else if (height == 57) {
+
+		if (Race == true) {
+			totalPaddleLength = 74;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 72;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 76;
+		}	
+
+	}
+
+	else if (height == 58) {
+
+		if (Race == true) {
+			totalPaddleLength = 75;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 73;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 77;
+		}	
+
+	}
+
+	else if (height == 59) {
+
+		if (Race == true) {
+			totalPaddleLength = 76;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 75;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 78;
+		}	
+
+	}
+
+	else if (height == 510) {
+
+		if (Race == true) {
+			totalPaddleLength = 77;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 76;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 79;
+		}	
+
+	}
+
+	else if (height == 511) {
+
+		if (Race == true) {
+			totalPaddleLength = 78;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 77;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 80;
+		}	
+
+	}
+
+	else if (height == 6) {
+
+		if (Race == true) {
+			totalPaddleLength = 79;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 78;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 81;
+		}	
+
+	}
+
+	else if (height == 61) {
+
+		if (Race == true) {
+			totalPaddleLength = 80;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 79;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 82;
+		}	
+
+	}
+
+	else if (height == 62) {
+
+		if (Race == true) {
+			totalPaddleLength = 81;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 80;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 84;
+		}	
+
+	}
+
+	else if (height == 63) {
+
+		if (Race == true) {
+			totalPaddleLength = 83;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 81;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 85;
+		}	
+
+	}
+
+	else if (height == 64) {
+
+		if (Race == true) {
+			totalPaddleLength = 84;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 82;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 86;
+		}	
+
+	}
+
+	else if (height == 65) {
+
+		if (Race == true) {
+			totalPaddleLength = 85;
+		}
+		else if (Surf == true) {
+			totalPaddleLength = 83;
+		}
+		else if (Flat_Water == true) {
+			totalPaddleLength = 87;
+		}	
+
+	}
+
+	//ADD LENGTH BASED ON BOARD THICKNESS
+
+	if (boardThickness == 'thin') {
+		totalPaddleLength += 1;
+	}
+	else if (boardThickness == 'thick') {
+		totalPaddleLength += 2;
+	}
+
+	//DONT RECOMEND A PADDLE THAT WE CANT BUILD (THE MAX PADDLE LENGTH IS 86)
+
+	if (totalPaddleLength > 86) {
+		totalPaddleLength = 86;
+	}
+
+	return totalPaddleLength;
 }
 
 function calculateBladeSize() {	
@@ -239,7 +598,6 @@ function calculateBladeSize() {
 		}
 	}
 	else {
-		console.log('Something is wrong with Blade Size Calculation');
 	}
 }
 
@@ -307,7 +665,6 @@ function setScreen() {
 	    currentScreen++;
 	    jQuery('.screen.active').fadeOut(function(){
 	    	jQuery('.screen.active').removeClass('active');
-	    	console.log(currentScreen);
 	    	jQuery( '.screen:eq('+currentScreen+')' ).show(function(){
 	    		jQuery(this).addClass('active');
 	    	});;
@@ -318,8 +675,10 @@ function setScreen() {
          jQuery('.progress-bar div:eq('+currentScreen+')').addClass('current');
 
      });
-          //Fade the button out until security is validated
+          //Fade the button out until security is validated also dont hide for skill lvl
+          
           jQuery(this).hide();
+          console.log(currentScreen);
           validation();
       }
 
@@ -366,15 +725,16 @@ function validation() {
 	     }
 	     else if (currentScreen == 4) {
 	         //CURRENT SCREEN = 4
+	         skillLevel = 2;
+	         paddleStyle = 2;
 	         if (skillLevel != undefined && paddleStyle != undefined) {
-	         	jQuery('.ui-bar button').fadeIn();
 	         	change_results_page();
 	         }
 	         else {
 	         	jQuery('.ui-bar button').hide();
 	         }
 	     }
-	     else if (currentScreen == 5) {
+	     else if (currentScreen == 7) {
 	     	jQuery('.fit-config').hide();
 	     }
 	     jQuery('.progress-bar div').each(function(index) {
@@ -393,11 +753,35 @@ function validation() {
 
 	 function change_results_page() {
 
-	 	jQuery('.bladeType').empty().append(calculateBladeTypes());
-	 	jQuery('.bladeSize').empty().append(calculateBladeSize());
-	 	jQuery('.paddleLength').empty().append(calculateBladeSize());
-	 	jQuery('.flexRating').empty().append(calculateShaftFlex());
-	 	jQuery('.handleSize').empty().append(calculateHandleSize());
+	 	//Complete Paddle Recomendation
+
+	 	jQuery('.complete .bladeType').empty().append(calculateBladeTypes());
+	 	jQuery('.complete .bladeSize').empty().append(calculateBladeSize());
+	 	jQuery('.complete .paddleLength').empty().append(calculateTotalPaddleLength());
+	 	jQuery('.complete .flexRating').empty().append(calculateShaftFlex());
+	 	jQuery('.complete .handleSize').empty().append(calculateHandleSize());
+
+	 	var surfPaddleImgURL = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-paddle-display.png';
+	 	var racePaddleImgURL = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-paddle-display.png';
+	 	var raceBladeURL = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/raceb.png';
+	 	
+	 	if (calculateBladeTypes() == 'Race') {
+	 		jQuery('.complete-paddle-img').attr('src',racePaddleImgURL);
+	 	}
+	 	if (calculateBladeTypes() == 'Surf') {
+	 		jQuery('.complete-paddle-img').attr('src',surfPaddleImgURL);
+	 	}
+
+	 	if (calculateBladeTypes() == 'Race and Surf') {
+	 		jQuery('.complete .bladeType').empty().append('Surf');
+	 		jQuery('.complete-paddle-img').attr('src',surfPaddleImgURL);
+	 		jQuery('.paddle-blade').attr('src',raceBladeURL);
+	 		jQuery('.added-blade').show();
+	 		jQuery('.added-blade .bladeType').empty().append('Race');
+	 		if (calculateBladeSize() <= 80) {
+	 			jQuery('.added-blade .bladeSize').empty().append(80);
+	 		}
+	 	}
 
 	 }
 
@@ -406,11 +790,11 @@ function validation() {
  	//Gender
 
  	if (gender == 'male') {
- 		var malehoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/male-selected.png';
+ 		var malehoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/male-selected.png';
  		jQuery('.male').find('img').attr('src', malehoverStateUrl);
  	}
  	else if (gender == 'female') {
- 		var femalehoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/female-selected.png';
+ 		var femalehoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/female-selected.png';
  		jQuery('.female').find('img').attr('src', femalehoverStateUrl);
  	}
 
@@ -418,7 +802,7 @@ function validation() {
 
  	jQuery('.age input').val(age);
  	jQuery('.weight input').val(weight);
- 	jQuery('.height input').val(weight);
+ 	jQuery('.height input').val(height);
 
 	//Return Value to Hand Size Input
 
@@ -428,7 +812,7 @@ function validation() {
 
 	if (Surf == 'true') {
 		Surf = true;
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-selected.png';
 		jQuery('.surf').find('img').attr('src', hoverStateUrl);
 	}
 	else {
@@ -437,7 +821,7 @@ function validation() {
 	
 	if (Flat_Water == 'true') {
 		Flat_Water = true;
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/flat-water-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/flat-water-selected.png';
 		jQuery('.flat-water').find('img').attr('src', hoverStateUrl);
 	}
 	else {
@@ -446,7 +830,7 @@ function validation() {
 
 	if (Race == 'true') {
 		Race = true;
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-selected.png';
 		jQuery('.race').find('img').attr('src', hoverStateUrl);
 	}
 	else {
@@ -456,15 +840,15 @@ function validation() {
 	//Return Board Thickness to its former value
 
 	if (boardThickness == 'thin') {
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-boardtype-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-boardtype-selected.png';
 		jQuery('.board-thickness button[value=thin]').find('img').attr('src', hoverStateUrl);
 	}
 	else if (boardThickness == 'medium') {
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-boardtype-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-boardtype-selected.png';
 		jQuery('.board-thickness button[value=medium]').find('img').attr('src', hoverStateUrl);
 	}
 	else if (boardThickness == 'thick') {
-		var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/inflatable-boardtype-selected.png';
+		var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/inflatable-boardtype-selected.png';
 		jQuery('.board-thickness button[value=thick]').find('img').attr('src', hoverStateUrl);
 	}
 
@@ -495,7 +879,160 @@ function validation() {
 	}
 }
 
-function add_to_cart() {
+function add_to_cart(isCompletePaddle) {
+
+	var completePaddle = isCompletePaddle;
+
+	var baseURL = 'http://'+window.location.hostname;
+	var actionURL = '?add-to-cart=';
+	var productID;
+
+	var shaftProductID = 25;
+	var bladeProductID = 24;
+	var handleProductID = 30;
+
+	var shaftVariationID;
+	var bladeVariationID;
+	var handleVariationID;
+
+	//Get Singular Items Attributes
+
+	var pbladeType = jQuery('.c-paddle-add').parent().parent().find('.bladeType').text();
+	var pbladeSize = jQuery('.c-paddle-add').parent().parent().find('.bladeSize').text();
+
+	var ptotalpaddleLength = jQuery('.c-paddle-add').parent().parent().find('.paddleLength').text();
+
+	var pshaftFlex = jQuery('.c-paddle-add').parent().parent().find('.flexRating').text();
+
+	var phandleSize = jQuery('.c-paddle-add').parent().parent().find('.handleSize').text();
+
+	//Determine if the Product is a complete paddle or a blade
+
+	if (completePaddle == true) {
+
+		//Add the shaft
+
+		//Set the Shaft Variation ID
+
+		if (pshaftFlex == '225') {
+			shaftVariationID = 42;
+		}
+		else if (pshaftFlex == '250') {
+			shaftVariationID = 264;
+		}
+		else if (pshaftFlex == '275') {
+			shaftVariationID = 265;
+		}
+
+		var shaftURL = baseURL+actionURL+shaftProductID+'&variation_id='+shaftVariationID+'&attribute_pa_plength='+ptotalpaddleLength+'&attribute_pa_flex='+pshaftFlex;
+
+		//Add the Blade
+
+		//Set the Blade Variation ID
+
+		if (pbladeType == 'Surf') {
+			if (pbladeSize == 70) {
+				bladeVariationID = 72;
+			}
+			else if (pbladeSize == 80) {
+				bladeVariationID = 73;
+			}
+			else if (pbladeSize == 85) {
+				bladeVariationID = 257;
+			}
+			else if (pbladeSize == 90) {
+				bladeVariationID = 258;
+			}
+			else if (pbladeSize == 95) {
+				bladeVariationID = 263;
+			}
+		}
+		else if (pbladeType == 'Race') {
+			if (pbladeSize <= 80) {
+				bladeVariationID = 260;
+				pbladeSize = 80;
+			}
+			else if (pbladeSize == 85) {
+				bladeVariationID = 261;
+			}
+			else if (pbladeSize == 90) {
+				bladeVariationID = 262;
+			}
+			else if (pbladeSize == 95) {
+				bladeVariationID = 263;
+			}
+		}
+
+		var bladeURL = baseURL+actionURL+bladeProductID+'&variation_id='+bladeVariationID+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize;
+
+		//Add the Handle
+
+		if (phandleSize == 'Large') {
+			handleVariationID = 52;
+		}
+		else if (phandleSize == 'Medium') {
+			handleVariationID = 53;
+		}
+		else if (phandleSize == 'Small') {
+			handleVariationID = 54;
+		}
+
+		var handleURL = baseURL+actionURL+handleProductID+'&variation_id='+handleVariationID+'&attribute_pa_hsize='+phandleSize;
+
+		jQuery.get(bladeURL).done(function( data ) {
+			jQuery.get(handleURL).done(function(data){
+				jQuery.get(shaftURL).done(function(data){
+					window.location.href = 'http://aztekpaddles.com/cart';
+				});
+			});
+		});
+
+	}
+	else {
+		pbladeType = jQuery('.added-blade li .bladeType').text();
+		pbladeSize = jQuery('.added-blade li .bladeSize').text();
+
+		if (pbladeType == 'Surf') {
+			if (pbladeSize == 70) {
+				bladeVariationID = 72;
+			}
+			else if (pbladeSize == 80) {
+				bladeVariationID = 73;
+			}
+			else if (pbladeSize == 85) {
+				bladeVariationID = 257;
+			}
+			else if (pbladeSize == 90) {
+				bladeVariationID = 258;
+			}
+			else if (pbladeSize == 95) {
+				bladeVariationID = 263;
+			}
+		}
+		else if (pbladeType == 'Race') {
+			if (pbladeSize <= 80) {
+				bladeVariationID = 260;
+				pbladeSize = 80;
+			}
+			else if (pbladeSize == 85) {
+				bladeVariationID = 261;
+			}
+			else if (pbladeSize == 90) {
+				bladeVariationID = 262;
+			}
+			else if (pbladeSize == 95) {
+				bladeVariationID = 263;
+			}
+		}
+
+		var bladeURL = baseURL+actionURL+bladeProductID+'&variation_id='+bladeVariationID+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize;
+		jQuery.get(bladeURL).done(function( data ) {
+			window.location.href = 'http://aztekpaddles.com/cart';
+		});
+	}
+
+
+
 
 }
 
@@ -504,12 +1041,11 @@ function add_all_to_cart() {
 }
 
 function loadFromDataBase() {
-	var url = "http://staging.inspyregroup.com/aztek?load_fit=true";
+	var url = 'http://'+window.location.hostname+'?load_fit=true';
 
 	jQuery.get(url, function( data ) {
 		if (data != '') {
 			allVars = data.split(',');
-			console.log(allVars);
 
 			gender = allVars[0];
 			age = allVars[1];
@@ -524,7 +1060,6 @@ function loadFromDataBase() {
 			paddleStyle = allVars[10];
 
 			validation();
-			console.log(data);
 			ResetUIChanges();
 		}
 		else {
@@ -538,7 +1073,7 @@ loadFromDataBase();
 
 function saveToDatabase() {
 
-	var url = "http://staging.inspyregroup.com/aztek";
+	var url = 'http://'+window.location.hostname;
 	allVars = [];
 	allVars.push(gender);
 	allVars.push(age);
@@ -551,9 +1086,9 @@ function saveToDatabase() {
 	allVars.push(boardThickness);
 	allVars.push(skillLevel);
 	allVars.push(paddleStyle);
-	console.log(allVars);
+	allVars.push(calculateTotalPaddleLength());
 	allVars = allVars.toString();
-	jQuery.get( url, { save_fit: "true", fit_profile_one: allVars }, function( data ) {
+	jQuery.get( url, { save_fit: "true", fit_profile_one: allVars, fit_profile_gender: gender, fit_profile_age: age, fit_profile_height: height, fit_profile_weight: weight, fit_profile_hsize: handSize, fit_profile_boardthickness: boardThickness, fit_profile_skilllvl: skillLevel, fit_profile_paddlestyle: paddleStyle }, function( data ) {
 		if (data != '') {
 
 		}
@@ -594,10 +1129,7 @@ function displayLogin() {
 }
 
 jQuery('.actions .loadRegForm').click(function(){
-	jQuery('.actions').fadeOut();
-	jQuery('.loginform').fadeOut(function(){
-		jQuery('.registerform').fadeIn();
-	});
+	window.location.href = 'http://aztekpaddles.com/my-account';
 });
 
 jQuery('.contButton').click(function(){
@@ -608,6 +1140,18 @@ jQuery('.contButton').click(function(){
 jQuery('.login button.close').click(function(){
 	displayLogin();
 });
+
+jQuery('.c-paddle-add').click(function(){
+	event.preventDefault();
+	add_to_cart(true);
+});
+
+jQuery('.s-product-add').click(function(){
+	event.preventDefault();
+	add_to_cart(false);
+});
+
+
 
 
 //Debugger Functions

@@ -69,11 +69,11 @@ jQuery(document).ready(function(){
    //Fit Config UI - Male Female Buttons
 
    jQuery('.male').click(function(){
-    var femalehoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/female.png';
+    var femalehoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/female.png';
     jQuery('.female').find('img').attr('src', femalehoverStateUrl);
 
-    var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/male-selected.png';
-    var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/male.png'; 
+    var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/male-selected.png';
+    var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/male.png'; 
     if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -83,11 +83,11 @@ jQuery(document).ready(function(){
  });
 
    jQuery('.female').click(function(){
-    var malehoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/male.png';
+    var malehoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/male.png';
     jQuery('.male').find('img').attr('src', malehoverStateUrl);
 
-    var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/female-selected.png';
-    var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/female.png'; 
+    var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/female-selected.png';
+    var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/female.png'; 
     if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -145,8 +145,8 @@ jQuery(document).ready(function(){
    //Fit Config UI - Check Boxes on Boards
 
    jQuery('.surf').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -156,8 +156,8 @@ jQuery(document).ready(function(){
  });
 
    jQuery('.flat-water').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/flat-water-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/flat-water.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/flat-water-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/flat-water.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -167,8 +167,8 @@ jQuery(document).ready(function(){
  });
 
    jQuery('.race').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -180,17 +180,17 @@ jQuery(document).ready(function(){
    //Board Thickness Selection States
 
    function resetallThickness() {
-     var surfURL = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-boardtype.png';
-     var raceURL =  'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-boardtype.png';
-     var inflatableURL = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/inflatable-boardtype.png';
+     var surfURL = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-boardtype.png';
+     var raceURL =  'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-boardtype.png';
+     var inflatableURL = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/inflatable-boardtype.png';
      jQuery('.board-thickness button[value=thin] img').attr('src', surfURL);
      jQuery('.board-thickness button[value=medium] img').attr('src', raceURL);
      jQuery('.board-thickness button[value=thick] img').attr('src', inflatableURL);
    }
 
    jQuery('.board-thickness button[value=thin]').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-boardtype-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/surf-boardtype.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-boardtype-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/surf-boardtype.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -200,8 +200,8 @@ jQuery(document).ready(function(){
     }
   });
    jQuery('.board-thickness button[value=medium]').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-boardtype-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/race-boardtype.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-boardtype-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/race-boardtype.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -211,8 +211,8 @@ jQuery(document).ready(function(){
     }
   });
    jQuery('.board-thickness button[value=thick]').click(function(){
-     var hoverStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/inflatable-boardtype-selected.png';
-     var origStateUrl = 'http://'+window.location.hostname+'/aztek/wp-content/themes/aztek/images/inflatable-boardtype.png'; 
+     var hoverStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/inflatable-boardtype-selected.png';
+     var origStateUrl = 'http://'+window.location.hostname+'/wp-content/themes/aztek/images/inflatable-boardtype.png'; 
      if(jQuery(this).find('img').attr('src') === hoverStateUrl) {
       jQuery(this).find('img').attr('src', origStateUrl);
     }
@@ -240,4 +240,10 @@ jQuery('.thumbnails .img-swap').click(function(){
   jQuery('.zoomLens').css('background-image', photo_zoom);
   return false;
 }); 
+
+// Mobile Menu Sub Toggle
+jQuery('.respMenu i').click(function(){
+jQuery('.respMenu-sub').slideToggle();
+});
+
 });

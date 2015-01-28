@@ -4,7 +4,7 @@
         <div class="col-wrap">
             <div class="column half">
                 <h5>Stay Fresh &amp; Informed</h5>
-                <p>Enter your email address for updates, a discount coupon and to be entered to win free gear!</p>
+                <p>Enter e-mail to stay informed about Aztek goings on and special promotions.</p>
             </div>
             <div class="column half talignright">
                 <form>
@@ -17,7 +17,7 @@
 </div>
     <div class="mini-container footer-nav">
         <div class="col-wrap">
-            <div class="column fifth">
+            <div class="column fifth mobile-hide">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/footer-logo.png">
             </div>
             <div class="column fifth">

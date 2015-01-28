@@ -28,7 +28,7 @@
             <div class="col-wrap">
                 <div class="paddle">
                     <div class="column sixth">
-                        <h2>AZTEK&trade; Complete Race Paddle</h2>
+                        <h2>AZTEK&trade; Race Paddle</h2>
                         <p>A complete paddle built to order; equipped with custom blade, handle and shaft.</p>
                         <p class="price">$390.<span>00</span></p>
                     </div>
@@ -36,12 +36,12 @@
                      <img src="<?php echo get_template_directory_uri(); ?>/images/race-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/race-paddle-zoom.png"/>
                  </div>
                  <div class="column sixth taligncenter">
-                     <p class="buy-now">Buy Now <i class="fa fa-angle-right"></i></p>
+                     <a href="<?php echo get_site_url(); ?>/buy-now/race-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
                  </div>
              </div>
              <div class="paddle">
                 <div class="column sixth">
-                    <h2>AZTEK&trade; Complete Surf Paddle</h2>
+                    <h2>AZTEK&trade; Surf Paddle</h2>
                     <p>A complete paddle built to order; equipped with custom blade, handle and shaft.</p>
                     <p class="price">$390.<span>00</span></p>
                 </div>
@@ -49,7 +49,7 @@
                  <img src="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-zoom.png">
              </div>
              <div class="column sixth taligncenter">
-                 <p class="buy-now">Buy Now <i class="fa fa-angle-right"></i></p>
+                 <a href="<?php echo get_site_url(); ?>/buy-now/surf-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
              </div>
          </div>
      </div>
@@ -78,7 +78,7 @@
                     <p>
                         The Aztek&trade; Variable Flex Profile technology stores and releases energy to maximize the power and efficiency of your stroke.
                     </p>
-                    <a class="btn" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
+                    <a class="btn tech-button" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                 <p>
                   The Aztek&trade; TradeBlade system allows you to quickly swap blades with the twist of a wrench. No matter what type of paddling you want to do, Aztek™ Paddles’ interchangeable race and surf blades have you covered–all while simplifying storage and transport.
               </p>
-              <a class="btn" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
+              <a class="btn tech-button" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
           </div>
       </div>
   </div>
@@ -112,7 +112,7 @@
                 <p>
                     Our forefathers took great pride in craftsmanship, and so do we. As carbon fiber pioneers, BST Nano Carbon combines bioengineering with impeccable craftsmanship, resulting in the most technically advanced, human-centric standup paddle products on the market.
                 </p>
-                <a class="btn" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
+                <a class="btn tech-button" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
 
             </div>
         </div>

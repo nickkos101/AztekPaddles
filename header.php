@@ -2,25 +2,51 @@
 <html>
 <head>
     <title><?php wp_title(''); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/normalize.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/woo.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/slick/slick.css"/>
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
     <meta name="viewport" content="width=device-width">
+    <meta name="google-site-verification" content="hcM5wD44B0SzOhaacbxgYRROZ3ADlJQh2EwernuKJlM" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58366141-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
     <?php wp_head(); ?>
 </head>
 <body>
+    <div class="respMenu col-wrap">
+        <div class="respMenu-bar">
+            <div class="logo column four-fifths">
+                <a href="<?php $url = home_url(); echo $url; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-mobile.png" alt="Aztek Paddles"/></a>
+            </div>
+            <div class="mobile-menu-open column fifth talignright">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        <div class="respMenu-sub col-wrap">
+            <div class="column half">
+                <?php wp_nav_menu(array('theme_location' => 'Mobile_Nav_Left',)); ?>
+            </div>
+            <div class="column half">
+                <?php wp_nav_menu(array('theme_location' => 'Mobile_Nav_Right',)); ?>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="container">
             <div class="col-wrap">
                 <div class="column third logo">
                     <a href="<?php $url = home_url(); echo $url; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Aztek Paddles"/></a>
                 </div>
-                <a href="aztek/get-fit"><img src="<?php echo get_template_directory_uri(); ?>/images/get-fit.png" class="get-fit"></a>
+                <a href="<?php echo get_site_url(); ?>/get-fit"><img src="<?php echo get_template_directory_uri(); ?>/images/get-fit.png" class="get-fit"></a>
                 <div class="column two-thirds talignright">
                     <nav>
                         <div class="social-media">
@@ -30,10 +56,10 @@
                             <a href="https://www.youtube.com/channel/UCCh9z86LBOKm6JhUL5nFjhA" target="_blank" title="Follow Aztek Paddles on youtube"><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="youtube" /></a>
                         </div>
                         <div class="account-links">
-                <?php wp_nav_menu(array('theme_location' => 'Accounts_Nav',)); ?>
+                            <?php wp_nav_menu(array('theme_location' => 'Accounts_Nav',)); ?>
                         </div>
                         <div class="navigation">
-                <?php wp_nav_menu(array('theme_location' => 'Header_Nav',)); ?>
+                            <?php wp_nav_menu(array('theme_location' => 'Header_Nav',)); ?>
                         </div>
                         <a href="<?php echo get_site_url(); ?>/cart"><div class="cart-count">
                             <p><?php global $woocommerce; echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?></p>

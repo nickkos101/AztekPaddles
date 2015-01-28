@@ -1,12 +1,25 @@
 @media (max-width:1560px) {
 	.paddle {height:auto;}
-	.paddle .sixth {width: 100%; text-align: center;}
+	.paddle .column { padding: 0px 12px; }
 	.paddle .two-thirds {width: 100%; text-align: center;}
 	.paddle .sixth:last-of-type {padding:25px 15px;}
+	.factory .slick-prev { left: 10px; }
+	.factory .slick-next { right: 45px; }
+	.drawing, .drawing .sup-man, .drawing .shaft-flex {height: 550px;}
+	.drawing .more-power { padding-top: 2%; padding-left: 12%; }
+	.header .navigation ul li {margin-left: 8px; margin-right: 8px;}
+	.header nav { padding-right: 60px; }
+	.drawing .container { max-width: 100%; }
+	.tradeblade .blade {left: 25%;}
+	.tradeblade .shaft-tip {left: 25%;}
+	.california .cali-state {background-position: 0%;}
 }
 
 @media (max-width:1160px) {
-	header .cart-count {display: none;}
+	.header .container {width: 100%; max-width: 100%; padding-left: 20px; padding-right: 20px;}
+	.header .get-fit { left: 40%;}
+	.header nav { padding-right: 90px; }
+	.container {max-width: 1070px; padding-left: 20px; padding-right: 20px;}
 	header nav {padding-right: 0px;}
 	header .get-fit {left:37%;}
 
@@ -19,6 +32,18 @@
 	.tradeblade {padding-top: 45px; padding-bottom: 45px;}
 
 	.factory .slick-prev, .slick-next {display: none !important;}
+	.mini-container { padding-left: 20px; padding-right: 20px; }
+	.top-anim {margin-left: 10px;}
+	.bot-anim {margin-left: 235px;}
+	.factory .slide .caption-line1 {margin-left: 15%;}
+	.factory .slide .caption-line2 {margin-left: 20%;}
+	.drawing, .drawing .sup-man, .drawing .shaft-flex {height: 500px;}
+	.california, .california .cali-state {height: 600px;}
+	.california .cali-state {background-position: -30%;}
+	.tradeblade .blade {left: 15%;}
+	.tradeblade .shaft-tip {left: 15%;}
+	.paddle .column { padding: 0px 10px 0 0; }
+	.drawing .more-power {padding-left: 16%;}
 }
 
 @media (max-width:980px) {
@@ -32,13 +57,13 @@
 	header .logo img {padding-top:15px; padding-left: 20px; max-height: 60px; padding-bottom: 15px;}
 	header .get-fit {display: none;}
 
-	main {margin-top: 70px;}
+	main {margin-top: 54px;}
 
-	.slider .half {width:100%;}
+
 	.slider .half .overlay {z-index:9999; position:relative;}
 
 	.slider .paddles {margin-left: -110px; width: 100%; text-align: center;}
-	.overlay p {font-size: 26px;}
+	.overlay p {font-size: 22px;}
 
 	.factory .slide .overlay h3, .factory .slide .overlay h3 span {font-size:1.5em; padding-left:0px !important;}
 	
@@ -55,6 +80,26 @@
 	.gray-wrap .fourth {display: none;}
 
 	.newsletter .column {width: 100%; text-align: center;}
+	.respMenu {display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 99999;}
+	.respMenu-bar {background: #000; height: 54px; overflow: hidden;}
+	.respMenu-sub {display: none; padding: 15px 0; background: #111; border-top: 2px solid #222; border-bottom: 2px solid #222;}
+	.respMenu-sub ul {list-style: none; margin-left: 10px; padding-left: 10px; margin-right: 10px; padding-right: 10px;}
+	.respMenu-sub ul li {padding: 5px 10px; border-bottom: 1px dotted #444;}
+	.respMenu-sub ul li:last-of-type {border-bottom: 0;}
+	.respMenu-sub ul li a {color: #fff; text-transform: uppercase;}
+	.respMenu .logo {padding: 10px 10px 10px 20px; display: inline-block;}
+	.header {display: none;}
+	.respMenu .mobile-menu-open {font-size: 28px; padding: 10px 20px 10px 10px;}
+	.top-anim {margin-left: -90px;}
+	.bot-anim {margin-left: 100px;}
+	.california .cali-state { background-position: -57%; }
+	.drawing .sup-man {background-image:none;}
+	.drawing .half {width: 100%; text-align: center !important;}
+	.drawing .more-power { padding-left: 0; padding-top: 3%; }
+	.drawing p {margin: 10px auto 20px;}
+	main .slider .slide .overlay { padding-top: 70px; padding-left: 20px; }
+	.overlay h1 {font-size: 42px; line-height: 42px;}
+	.factory .slide {min-height: 480px;}
 }
 
 @media (max-width:880px) {
@@ -63,16 +108,41 @@
 }
 
 @media (max-width:769px) {
-	.tradeblade .two-thirds {width: 100%; text-align: center; padding-bottom:115px;}
-	.tradeblade .third {width: 100%; text-align: center; padding-top: 10px;}
-	.tradeblade .blade {margin-top:75px; margin-left: 0px; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg);}
 
 	.california h4 {font-size:20px; line-height:22px;}
 	.california p {font-size: 14px;}
-		.factory .slick-dots {display: none !important;}
+	.factory .slick-dots {display: none !important;}
+	.overlay h1 {font-size: 34px; line-height: 34px;}
+	.overlay p {font-size: 20px;}
+	main .column.half {width: 100% !important;}
+	main .slider .column.half {width: 50% !important;}
+	main .tradeblade .column.half {width: 50% !important;}
+	main .column.sixth {width: 100% !important; text-align: center;}
+	main .column.two-thirds {width: 100% !important; text-align: center;}
+	main .column.fourth {width: 100% !important; text-align: center;}
+	main .column.fifth {width: 100% !important; text-align: center;}
+	main .column.third {width: 100% !important; text-align: center;}
+	.paddle {display: block;}
+	.paddle .sixth:first-of-type {display: block; border: 0;}
+	.paddle .sixth:last-of-type {display: block; border: 0; padding: 0;}
+	.tradeblade .blade {left: 0;}
+	.tradeblade .shaft-tip { left: 0; }
+	.handcrafted {display: none;}
+	.endorsement .slide {background-position: 40%;}
+	footer .fifth {width: 50% !important; text-align: center;}
+	.mobile-hide {display: none;}
+	.cart-style td.product-thumbnail { width: 45px !important; height: 45px !important; }
+	.cart-collaterals .cross-sells {display: none !important;}
+	.cart-collaterals .cart_totals {width: 100% !important;}
+	.cart-style .cart-collaterals {text-align: left !important;}
+	.product-type-simple .images {display: block !important; width: 100% !important;}
+	.product-type-simple .summary { display: inline-block !important; width: 100% !important; padding: 30px 10px !important;}
+	.related-products {text-align: center;}
+	.checkout .col-1, .checkout .col-2 { width: 100% !important; }
 }
 
 @media (max-width:480px) {
+	.newsletter input[type=email] { font-weight: 100; width: 279px !important; }
 
 	input[type=submit], button, .btn {font-size: 14px;}
 
@@ -88,10 +158,11 @@
 	.drawing h4 {font-size: 38px;}
 	.tradeblade h4 {font-size: 40px;}
 	.tradeblade .blade {margin-top: 39px;}
+	.tradeblade {display: none;}
 
-	main .slider .slide .overlay {padding-top: 25px; text-align: center;}
-	.overlay h1 {font-size:42px;}
-	.overlay p {font-size: 16px;}
+	main .slider .slide .overlay {padding-top: 25px; text-align: left;}
+	.overlay h1 { font-size: 31px; text-align: left; }
+	.overlay p {font-size: 16px; text-align: left;}
 	.top-anim {margin-left: 0px;}
 	.bot-anim {display: none;}
 	.glow {top: 5%; margin-left: -45px;}
@@ -100,8 +171,47 @@
 	.newsletter button {font-size: 17px;}
 
 	.gray-wrap h5 {font-size: 36px;}
-
+	.factory .slide .overlay { padding-top: 25px; }
 	footer {padding-top: 40px;}
 	footer .column {width: 100%; text-align: center; border:none; padding-bottom: 20px;}
 	footer .copyright {padding-top: 15px;}
+	.drawing .more-power { padding-left: 0; padding-top: 25%; }
+	.california .column:first-of-type {padding-top: 0; padding-bottom: 0;}
+	.california, .california .cali-state { height: 336px; background-position: 0; }
+	.endorsement {display: none !important;}
+	footer .fifth { width: 100% !important; text-align: center; }
+	.cart-style table, .cart-style thead, .cart-style tr, .cart-style td {display: block;}
+	.cart-style thead {display: none;}
+	h3.cart-title {margin-bottom: 15px !important;}
+	.cart-style td.product-thumbnail { width: 150px !important; height: 150px !important; margin: auto; }
+	.cart-style td.product-remove {position: absolute;}
+	td.product-subtotal {display: none !important;}
+	.cart-style div.coupon { text-align: center !important; display: inline-block !important; float: none !important; }
+	.cart-style td.actions {text-align: center !important;}
+	#billing_first_name_field, #shipping_first_name_field, #billing_last_name_field, #shipping_last_name_field {padding-left: 0; padding-right: 0;  display: inline-block !important; width: 100% !important; }
+	#billing_address_1_field, #shipping_address_1_field {padding-left: 0; padding-right: 0; display: inline-block !important; width: 100% !important; }
+	#billing_address_2_field, #shipping_address_2_field {padding-left: 0; padding-right: 0; display: inline-block !important; width: 100% !important; }
+	#billing_city_field, #shipping_city_field, #billing_state_field, #shipping_state_field, #billing_postcode_field, #shipping_postcode_field {width: 100% !important;}
+	#billing_email_field, #shipping_email_field {padding-left: 0; padding-right: 0; width: 100% !important;}
+	#billing_phone_field, #shipping_phone_field {padding-left: 0; padding-right: 0; width: 100% !important;}
+	.shop_table th, .shop_table td { width: 100%; }
+	#payment { display: block !important; width: 100% !important; vertical-align: middle !important; border-top: 0 !important; background: none !important; padding: 0 !important; }
+	.payment_methods {display: block !important; width: 100% !important;}
+	.place-order { text-align: right !important; padding-bottom: 25px !important; display: block !important; vertical-align: middle !important; width: 100% !important; padding-left: 0 !important; }
+	.cart-style td.product-thumbnail img { height: 150px !important; display: block !important; padding: 10px 0 !important; width: auto !important; margin: auto !important; }
+.factory .slide {background-size: 100% !important; min-height: 200px;}
+}
+
+@media (max-width:380px) {
+	.overlay p {display: none !important;}
+	.top-anim { margin-left: -31px !important; margin-top: -96px !important; }
+	.bot-anim {display: none !important;}
+	main .slider {height: 470px !important;}
+	.factory .slide .caption-line2 { margin-left: 10% !important; }
+	.factory .slide .caption-line1 {margin-left: 3% !important;}
+	.newsletter input[type=email] { width: 200px !important; }
+	.shop_table th, .shop_table td { width: 100%; }
+	.cart-style td.product-thumbnail img { height: 150px !important; display: block !important; padding: 10px 0 !important; width: auto !important; margin: auto !important; }
+.respMenu-sub ul { list-style: none; margin-left: 10px; padding-left: 0; margin-right: 10px; padding-right: 0;}
+.factory .slide {background-size: 100% !important; min-height: 140px;}
 }

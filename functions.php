@@ -12,7 +12,15 @@ function aztek_scripts() {
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'zoom', get_template_directory_uri() . '/js/jquery.elevatezoom.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'function', get_template_directory_uri() . '/js/function.js', array('jquery', 'zoom', 'jqueryuimin'), '1.0.0', true );
-	wp_enqueue_script( 'getfit', get_template_directory_uri() . '/js/get-fit.js', array('jquery', 'zoom', 'jqueryuimin', 'function'), '1.0.0', true );
+	
+	wp_register_style( 'normalize', get_template_directory_uri() . '/normalize.css' );
+	wp_enqueue_style( 'normalize' );
+	wp_register_style( 'style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'style' );
+	wp_register_style( 'responsive', get_template_directory_uri() . '/responsive.css' );
+	wp_enqueue_style( 'responsive' );
+	wp_register_style( 'woo', get_template_directory_uri() . '/woo.css' );
+	wp_enqueue_style( 'woo' );
 }
 
 add_action( 'wp_enqueue_scripts', 'aztek_scripts' );
@@ -41,7 +49,54 @@ function fit_profile_fields( $user ) { ?>
 		<th><label for="fit_profile_one">Fit Profile String</label></th>
 		<td>
 			<input type="text" name="fit_profile_one" id="fit_profile_one" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_one', $user->ID ) ); ?>" class="regular-text" /><br />
-			<span class="description">Please enter your fit_profile_one username.</span>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_gender">Fit Profile Gender</label></th>
+		<td>
+			<input type="text" name="fit_profile_gender" id="fit_profile_gender" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_gender', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_age">Fit Profile Age</label></th>
+		<td>
+			<input type="text" name="fit_profile_age" id="fit_profile_age" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_age', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Height</label></th>
+		<td>
+			<input type="text" name="fit_profile_height" id="fit_profile_height" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_height', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Weight</label></th>
+		<td>
+			<input type="text" name="fit_profile_weight" id="fit_profile_weight" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_weight', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Hand Size</label></th>
+		<td>
+			<input type="text" name="fit_profile_hsize" id="fit_profile_hsize" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_hsize', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Board Thickness</label></th>
+		<td>
+			<input type="text" name="fit_profile_boardthickness" id="fit_profile_boardthickness" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_boardthickness', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Skill Level</label></th>
+		<td>
+			<input type="text" name="fit_profile_skilllvl" id="fit_profile_skilllvl" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_skilllvl', $user->ID ) ); ?>" class="regular-text" /><br />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="fit_profile_height">Fit Profile Paddle Style</label></th>
+		<td>
+			<input type="text" name="fit_profile_paddlestyle" id="fit_profile_paddlestyle" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_paddlestyle', $user->ID ) ); ?>" class="regular-text" /><br />
 		</td>
 	</tr>
 </table>
@@ -57,6 +112,14 @@ function fit_profile_save_fields( $user_id ) {
 
 	/* Copy and paste this line for additional fields. Make sure to change 'fit_profile_one' to the field ID. */
 	update_usermeta( $user_id, 'fit_profile_one', $_POST['fit_profile_one'] );
+	update_usermeta( $user_id, 'fit_profile_gender', $_POST['fit_profile_gender'] );
+	update_usermeta( $user_id, 'fit_profile_age', $_POST['fit_profile_age'] );
+	update_usermeta( $user_id, 'fit_profile_height', $_POST['fit_profile_height'] );
+	update_usermeta( $user_id, 'fit_profile_weight', $_POST['fit_profile_weight'] );
+	update_usermeta( $user_id, 'fit_profile_hsize', $_POST['fit_profile_hsize'] );
+	update_usermeta( $user_id, 'fit_profile_boardthickness', $_POST['fit_profile_boardthickness'] );
+	update_usermeta( $user_id, 'fit_profile_skilllvl', $_POST['fit_profile_skilllvl'] );
+	update_usermeta( $user_id, 'fit_profile_paddlestyle', $_POST['fit_profile_paddlestyle'] );
 }
 
 //Front End Saving
@@ -65,6 +128,14 @@ if (isset($_REQUEST['save_fit'])){
 	if(is_user_logged_in()) {
 		$user_id = get_current_user_id();
 		update_usermeta( $user_id, 'fit_profile_one', $_REQUEST['fit_profile_one'] );
+		update_usermeta( $user_id, 'fit_profile_gender', $_REQUEST['fit_profile_gender'] );
+		update_usermeta( $user_id, 'fit_profile_age', $_REQUEST['fit_profile_age'] );
+		update_usermeta( $user_id, 'fit_profile_height', $_REQUEST['fit_profile_height'] );
+		update_usermeta( $user_id, 'fit_profile_weight', $_REQUEST['fit_profile_weight'] );
+		update_usermeta( $user_id, 'fit_profile_hsize', $_REQUEST['fit_profile_hsize'] );
+		update_usermeta( $user_id, 'fit_profile_boardthickness', $_REQUEST['fit_profile_boardthickness'] );
+		update_usermeta( $user_id, 'fit_profile_skilllvl', $_REQUEST['fit_profile_skilllvl'] );
+		update_usermeta( $user_id, 'fit_profile_paddlestyle', $_REQUEST['fit_profile_paddlestyle'] );
 	}
 	else {
 		echo false;
@@ -137,6 +208,7 @@ function wp_register_form() {
 	echo '</p>';
 	echo '<p id="reg_passmail">A password will be e-mailed to you.</p>';
 	echo '<input type="hidden" name="redirect_to" value="/login/?action=register&success=1" />';
+	do_action('register_form');
 	echo '<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" value="Sign Up" /></p>';
 	echo '</form>';
 }
@@ -217,6 +289,8 @@ register_nav_menus( array(
 	'Shipping_Nav' => 'Shipping Menu Nav',
 	'Company_Nav' => 'Compay Menu Nav',
 	'Contact_Nav' => 'Contact Nav',
+	'Mobile_Nav_Left' => 'Mobile Nav Left Side',
+	'Mobile_Nav_Right' => 'Mobile Nav Right Side',
 	) );
 
 add_theme_support( 'widgets' );
@@ -280,17 +354,17 @@ register_sidebar( array(
 // Instagram Feed
 
 function instaGramFeed($userID, $accessToken){
-  $url = "https://api.instagram.com/v1/users/".$userID."/media/recent/?access_token=".$accessToken;
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-  $result = curl_exec($ch);
-  curl_close($ch); 
-  $result = json_decode($result);
-    foreach ($result->data as $post) {
-    echo '<div><a target="_blank" href="'.$post->link.'"><img src="'.$post->images->standard_resolution->url.'"></a></div>';
-  } 
+	$url = "https://api.instagram.com/v1/users/".$userID."/media/recent/?access_token=".$accessToken;
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+	$result = curl_exec($ch);
+	curl_close($ch); 
+	$result = json_decode($result);
+	foreach ($result->data as $post) {
+		echo '<div><a target="_blank" href="'.$post->link.'"><img src="'.$post->images->low_resolution->url.'"></a></div>';
+	} 
 }
 
 // Remove Default Sorting Dropdown

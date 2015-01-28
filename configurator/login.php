@@ -5,10 +5,10 @@
 			<?php if (!is_user_logged_in() ) { ?>
 			<div class="loginform">
 				<h2>Login or Register to Save your Fit Profile.</h2>
-				<?php wp_login_form(); ?>
-			</div>
-			<div class="registerform">
-				<?php wp_register_form(); ?>
+				<?php 
+				$args = array('label_username' => 'Username/Email');
+				wp_login_form($args); 
+				?>
 			</div>
 			<?php } ?>
 			<div class="actions">

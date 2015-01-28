@@ -1,8 +1,7 @@
                 <div class="screen">
                     <div class="column third">
                         <h4><b>Intended</b> Use</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <p>Each blade is designed to perfect your performance, factoring in your body measurements, usage, skill and style.</p>
                         </div>
                         <div class="column two-thirds taligncenter intended-use">
                             <div class="column third">

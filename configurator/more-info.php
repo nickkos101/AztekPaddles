@@ -6,7 +6,11 @@
                     <p>
                       <label>How did you hear about Aztek&trade; (Optional)</label>
                       <select>
-                        <option>Select One</option>
+                        <option>Friend</option>
+                        <option>Website / Search Engine</option>
+                        <option>Event</option>
+                        <option>Print Ad (Newspaper, Magazine etc)</option>
+                        <option>TV / Radio</option>
                       </select>
                     </p>
                   </div>
@@ -45,7 +49,8 @@
                   <p>
                     <label>Frequency? (Optional)</label>
                     <select>
-                      <option>Select One</option>
+                      <option>Once a week</option>
+                      <option>More than once a week</option>
                     </select>
                   </p>
                 </div>

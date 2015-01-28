@@ -22,14 +22,14 @@
 							?>
 						</div>
 						<div class="column sixth taligncenter">
-							<a href="<?php echo get_site_url(); ?>/get-fit" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo get_site_url(); ?>/buy-now/<?php echo($post->post_name) ?>" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 			<?php endwhile; else: ?>
 		<?php endif; ?>
 	</div>
-	<div class="mini-container">
+	<div class="container">
 		<?php 
 		$shaftargs = array(
 			'posts_per_page' => -1, 
@@ -72,7 +72,7 @@
 		<?php endwhile; else: ?>
 	<?php endif; ?>
 </div>
-	<div class="mini-container">
+	<div class="container">
 		<?php 
 		$productargs = array(
 			'posts_per_page' => -1, 
@@ -85,8 +85,8 @@
 				array(
 					'taxonomy' => 'product_cat',
 					'field' => 'slug',
-					'terms' => array( 'paddles', 'shafts' ),
-					'operator' => 'NOT IN'
+					'terms' => array( 'surf-blades', 'race-blades' ),
+					'operator' => 'IN'
 					),
 				),
 			'meta_query' => array(
@@ -100,7 +100,50 @@
 			query_posts($productargs); ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<a href="<?php the_permalink(); ?>">
-				<div class="fourth column">
+				<div class="fifth column">
+					<div class="product-cat-items">
+						<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail('medium');
+						} 
+						?>
+						<h3><?php the_title(); ?></h3>
+						<?php woocommerce_get_template( 'loop/price.php' ); ?>
+					</div>
+				</div>
+			</a>
+		<?php endwhile; else: ?>
+	<?php endif; ?>
+</div>
+	<div class="container">
+		<?php 
+		$productargs = array(
+			'posts_per_page' => -1, 
+			'post_type' => 'product',
+			'orderby' => 'menu_order',
+			'order' => 'asc',
+			'post_status' => 'publish',
+			'tax_query' => array(
+				'relation' => 'AND',
+				array(
+					'taxonomy' => 'product_cat',
+					'field' => 'slug',
+					'terms' => 'handles',
+					'operator' => 'IN'
+					),
+				),
+			'meta_query' => array(
+				array(
+					'key' => '_visibility',
+					'value' => array( 'catalog', 'visible' ),
+					'compare' => 'IN'
+					),
+				),
+			);
+			query_posts($productargs); ?>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<a href="<?php the_permalink(); ?>">
+				<div class="fifth column">
 					<div class="product-cat-items">
 						<?php
 						if ( has_post_thumbnail() ) {
