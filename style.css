@@ -35,7 +35,7 @@ hr.dark {background-image:url('images/aztek-dark-tile.png'); border-color:#000; 
 
 input[type=text], input[type=password], input[type=email], input[type=number] {border:none; padding:10px 15px; border-radius:4px;}
 
-input[type=submit], button, .btn {background-color:#35ab9c; padding: 7px 15px 5px; color:#fff; text-transform: uppercase; font-weight: 300; font-size:16px; display: inline-block; border:none; border-radius:20px;}
+input[type=submit], button, .btn {background-color:#35ab9c; font-style:italic; padding: 7px 15px 5px; color:#fff; text-transform: uppercase; font-weight: 500; font-size:16px; display: inline-block; border:none; border-radius:20px;}
 input[type=submit] i, button i, .btn i {padding-left:25px; vertical-align: middle; margin-top:-2px; font-size: 22px;}
 
 textarea {width: 100%; padding:10px 15px; min-height: 150px;}
@@ -48,6 +48,9 @@ textarea {width: 100%; padding:10px 15px; min-height: 150px;}
 .talignleft {text-align: left;}
 .talignright {text-align: right;}
 .taligncenter {text-align: center;}
+
+.alignright {float: right;}
+.alignleft {float: left;}
 
 /* Base */
 .container {margin-left: auto; margin-right: auto; padding-left: 45px; padding-right: 45px; max-width: 1400px;}
@@ -104,6 +107,9 @@ textarea {width: 100%; padding:10px 15px; min-height: 150px;}
 .header .responsive ul {display: none; background-image: url('images/carbonfiber.png'); position:absolute; left:0px; top:100%; text-align: left; width: 100%;}
 .header .responsive ul li {display:block; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; border-top:1px solid #35AB9C;}
 .header .responsive ul li a {color:#fff; text-transform: uppercase;}
+
+.msg-bar {width: 100%; z-index: 999999; display: none; position: absolute; left:0px; top:140px; padding-top: 10px; padding-bottom: 10px; color:#fff; background-color: #35AB9C;}
+.msg-bar p {font-size: 16px; font-weight: 300;}
 
 /* Main */
 
@@ -240,8 +246,9 @@ footer .footer-nav {padding-top: 80px;}
 .fit-config h4 {font-weight:200; color:#35ab9c;}
 .fit-config h4 b {font-weight:400; color:#fff;}
 .fit-config p {color:#fff; font-weight:300; font-size: 14px; line-height: 22px; letter-spacing: 2px;}
-.fit-config label {font-size: 16px; font-weight:300; letter-spacing:2px; display: block; padding-top:10px; padding-bottom: 10px;}
+.fit-config label {font-size: 16px; font-weight:500; font-style:italic; letter-spacing:2px; display: block; padding-top:10px; padding-bottom: 10px;}
 .fit-config button.nobg {background-color: transparent;}
+.intended-use label {height: 50px;}
 
 /* Select Menus */
 
@@ -263,10 +270,12 @@ footer .footer-nav {padding-top: 80px;}
 
 .height .toolTip, .weight .toolTip {-webkit-column-count:2; -moz-column-count:2; -ms-column-count:2; -o-column-count:2; column-count:2; -webkit-column-gap:20px; -moz-column-gap:20px; -ms-column-gap:20px; -o-column-gap:20px; column-gap:20px; columns:2; -webkit-column-rule:1px outset #ccc; -moz-column-rule:1px outset #ccc; column-rule:1px outset #ccc;}
 
+.height .toolTip {columns:4; -webkit-column-count:4; -moz-column-count:4; -ms-column-count:4; -o-column-count:4; column-count:4; margin-left: -258px !important; }
+
 .fit-config .screen.active {display: block;}
 .fit-config .screen {display: none; padding: 20px 0px;}
 
-.fit-config input[type=text].number {background-color:#000; color: #fff; text-align: center; width: 136px !important; height: 136px; border-radius:100%; border:16px solid #666666; font-size:16px; font-style: italic; font-weight: bold; -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.55); -moz-box-shadow:0px 0px 15px 0px rgba(50, 50, 50, 0.55); box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.55);}
+.fit-config input[type=text].number {background:#000 !important; color: #fff; text-align: center; width: 136px !important; height: 136px; border-radius:100%; border:16px solid #666666; font-size:16px; font-style: italic; font-weight: bold; -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.55); -moz-box-shadow:0px 0px 15px 0px rgba(50, 50, 50, 0.55); box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.55);}
 .fit-config .number:hover, .fit-config .number:focus {border-color:#d9df20;}
 .fit-config .number.active {border-color:#35ab9c;}
 
@@ -280,7 +289,7 @@ footer .footer-nav {padding-top: 80px;}
 .ui-bar .progress-bar div:last-of-type {border-top-right-radius:10px; border-bottom-right-radius: 10px;}
 .ui-bar .progress-bar .finished {background-color:#35ab9c;}
 .ui-bar .progress-bar .current {background-color:#d9df20;}
-.ui-bar .progress-bar div .toolTip {font-size:12px; display: none; position: relative; margin-top:-20px; background-color: #fff; color:#35ab9c; padding: 5px;}
+.ui-bar .progress-bar div .toolTip {font-size:12px; display: none; position: relative; margin-top:-40px; background-color: #fff; color:#35ab9c; padding: 5px; width: 150px; margin-left: -35px;}
 .ui-bar .progress-bar div.finished:hover .toolTip {display: block; cursor: pointer;}
 .ui-bar .progress-bar div .toolTip:after {top:100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-top-color: #fff; border-width:10px; margin-left: -10px;}
 .ui-bar button {display: none;}
@@ -383,6 +392,48 @@ footer .footer-nav {padding-top: 80px;}
 .buy-now {font-style: italic; font-weight: 600; color:#3cc3b2; text-transform: uppercase; font-size:30px;}
 .buy-now i {color: #808080; vertical-align: middle; margin-left:15px; margin-top: -5px; display:inline-block;}
 
+/* Technology Page */
+
+.tech .subnav p {font-size:24px; color:#000;}
+.tech .subnav .column {padding-top:65px; padding-bottom: 65px;}
+.tech .subnav .column:hover {background-color: #3cc3b2;}
+.tech .subnav a {color:#000;}
+.tech .subnav .column:hover a {color:#fff;}
+
+.tech h2 {font-size: 100px; color:#fff; text-transform: uppercase; font-weight: bold; font-style: italic; margin:0px;}
+.tech h2 span {color:#3cc3b2;}
+
+.tech .flex-profile {padding-top: 170px; padding-bottom: 170px; color:#000; background-image: url('images/aztek-yellow-tile.jpg');}
+.tech .flex-profile h2 {color:#000;}
+.tech .flex-profile p {font-weight: 300; font-size: 18px; color:#000; line-height:38px;}
+
+.tech .paddle-tech {width:100%; margin-bottom: -4px;}
+
+.tech .details .full {padding-top: 80px; padding-bottom: 80px;}
+.tech .half {padding-left: 25px; padding-right: 25px;}
+.tech .details h3 {font-size:36px; font-weight: bold; font-style: italic;}
+.tech .details p {font-size:18px; line-height: 34px;}
+
+.tech .tradeblade {padding-top: 170px; padding-bottom: 170px; height:auto; color:#fff; background-image: url('images/tech/TRADEBLADE_BG.png');}
+.tech .tradeblade h2 {color:#fff;}
+.tech .tradeblade p {font-weight: 300; font-size: 18px; color:#fff; line-height:38px;}
+
+.tech .cali-wrap {padding-top: 170px; padding-bottom: 170px; color:#fff; background-image: url('images/tech/HANDCRAFTED_BG.png');}
+.tech .cali-wrap h2 {color:#fff;}
+.tech .cali-wrap p {font-weight: 300; font-size: 18px; color:#fff; line-height:38px;}
+
+#trade {padding-top:75px;}
+
+/* About Page */
+
+.atom-weave {position: relative;}
+.atom-weave img {width: 100%;}
+.atom-weave .overlay {position: absolute; top:18%; left:0px; width: 100%;}
+.atom-weave .overlay img {width: auto;}
+.atom-weave .overlay h2 {text-transform: uppercase; color:#3cc3b2; margin-bottom: 0px; font-style: italic; font-weight: bold; font-size: 46px;}
+.atom-weave .overlay h2 span {color:#fff;}
+.atom-weave .overlay p {font-size: 32px; font-weight: 100; color:#fff;}
+
 /* Grid */
 
 .col-wrap {font-size: 0;}
@@ -400,6 +451,7 @@ footer .footer-nav {padding-top: 80px;}
 
 /* Zoom Style */
 .zoomContainer {cursor: crosshair}
+.zoomLens {background-color: #fff;}
 
 /* placeholder color */
 
@@ -418,19 +470,29 @@ h5.paddle-features-title {text-transform: uppercase; margin-top: 0; margin-botto
 .paddle ul.paddle-features li { color: #666; padding: 0 0 15px; font-size: 16px; line-height: 1.6; }
 .paddle.paddle-feaux {border-bottom: 0;}
 
+.product-cat-page.complete-paddle img {
+	max-width: 780px;
+}
+
 /* Mobile Menu */
 .respMenu {display: none;}
 
 /* Single Pages */
 .page-content h3 {text-transform: uppercase; font-style: italic;}
-.page-content p {font-size: 18px; line-height: 1.6;}
+.page-content p {font-size:20px; line-height: 1.8; color:#333333;}
 .page-content .page-contain {padding-top: 30px; padding-bottom: 30px;}
 
 /* Launch Element Hiding */ 
-.tech-button {display: none !important;}
+
 
 /* Contact Page */
-.ninja-forms-form-wrap input, .ninja-forms-form-wrap select, .ninja-forms-form-wrap textarea { width: auto; height: auto; vertical-align: inherit; background: #fafafa; border: 1px solid #eee; }
+p.address-par {line-height: 1.2; display: inline-block; margin-top: 0; margin-bottom: 0;}
+div.address-icon {display: inline-block; vertical-align: top;}
+#ninja_forms_field_4 {width:100%;}
+.ninja-forms-form-wrap input, .ninja-forms-form-wrap select, .ninja-forms-form-wrap textarea { width: auto; height: auto; vertical-align: inherit; background: #f4f4f4; border: 1px solid #eee; font-size: 16px; color: #929497; font-style: italic; }
 .ninja-forms-form-wrap input[type=submit] {background-color: #35ab9c; padding: 7px 15px 5px; color: #fff; text-transform: uppercase; font-weight: 300; font-size: 16px; display: inline-block; border: none; border-radius: 20px;}
-.map-frame {padding-right: 30px;}
-.ninja-wrap {padding-top: 30px;}
+.map-frame {padding-right: 30px; margin-top: 30px;}
+.ninja-wrap {padding-top:140px;}
+.contact .icon {margin-right: 25px; vertical-align: middle;}
+.contact h3 {font-size: 50px; font-weight: lighter; font-style: italic; text-transform: none;}
+.contact h3 span {color:#35ab9c; font-weight: bold;}

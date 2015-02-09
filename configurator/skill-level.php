@@ -24,13 +24,13 @@
                           <div class="skill-level-slider"></div>
                           <input type="hidden" name="paddlestyle" value="2">
                           <div class="column third talignleft">
-                            <p>Slow</p>
+                            <p>Long &amp; Smooth</p>
                           </div>
                           <div class="column third taligncenter">
-                            <p>Moderate</p>
+                            <p>Moderate &amp; Steady</p>
                           </div>
                           <div class="column third talignright">
-                            <p>Fast</p>
+                            <p>Short &amp; Fast</p>
                           </div>
                         </div>
                       </div>

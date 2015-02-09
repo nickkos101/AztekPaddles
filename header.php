@@ -2,13 +2,16 @@
 <html>
 <head>
     <title><?php wp_title(''); ?></title>
+    <meta name="keywords" content="SUP Paddle, stand up paddle boarding paddle, stand up paddle, replaceable blades">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/slick/slick.css"/>
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1">
     <meta name="google-site-verification" content="hcM5wD44B0SzOhaacbxgYRROZ3ADlJQh2EwernuKJlM" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Aztek Paddles makes stand up paddle board paddles that are custom made for you with patented technology that allow for removable blades, shafts and handles.">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -78,3 +81,4 @@
             </div>
         </div>
     </header>
+    <div class="msg-bar"><div class="container"></div></div>

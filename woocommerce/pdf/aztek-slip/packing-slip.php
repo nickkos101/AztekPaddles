@@ -1,4 +1,5 @@
 <?php global $wpo_wcpdf; ?>
+<?php include 'custom-attributes.php'; ?>
 <table class="head container">
 	<tr>
 		<td class="header">
@@ -86,6 +87,8 @@ $user_id = $order->user_id;
 $fitstring =  get_the_author_meta( 'fit_profile_one', $user_id);
 $fitvars = explode( ',', $fitstring );
 $totalpaddlelength = $fitvars[11];
+$pbladeType = $fitvars[12];
+$bladesize = $fitvars[13];
 ?>
 <table>
 	<thead>
@@ -94,152 +97,99 @@ $totalpaddlelength = $fitvars[11];
 	<tbody>
 		<tr>
 			<td>Sex:</td>
-			<td><?php echo $fitvars[0]; ?></td>
+			<td><?php
+			if (isset($fitvars[0])) {
+				echo $fitvars[0];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Age:</td>
-			<td><?php echo $fitvars[1]; ?></td>
+			<td><?php
+			if (isset($fitvars[1])) {
+				echo $fitvars[1];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Height:</td>
-			<td><?php echo $fitvars[2]; ?></td>
+			<td><?php
+			if (isset($fitvars[2])) {
+				echo $fitvars[2];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Weight:</td>
-			<td><?php echo $fitvars[3]; ?></td>
+			<td><?php
+			if (isset($fitvars[3])) {
+				echo $fitvars[3];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Hand Size:</td>
-			<td><?php echo $fitvars[4]; ?></td>
+			<td><?php
+			if (isset($fitvars[4])) {
+				echo $fitvars[4];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Board Thickness:</td>
-			<td><?php echo $fitvars[8]; ?></td>
+			<td><?php
+			if (isset($fitvars[8])) {
+				echo $fitvars[8];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Skill Level:</td>
-			<td><?php echo $fitvars[9]; ?></td>
+			<td><?php
+			if (isset($fitvars[9])) {
+				echo $fitvars[9];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 		<tr>
 			<td>Paddle Style:</td>
-			<td><?php echo $fitvars[10]; ?></td>
+			<td><?php
+			if (isset($fitvars[10])) {
+				echo $fitvars[10];
+			}
+			else {
+				echo 'Fit Profile Data Not found!';
+			}
+			?></td>
 		</tr>
 	</tbody>
 </table>
-<?php
-function cutInstructions($tpl) {
-	if ($tpl == 82) {
-		$trim_blade = 0.6;
-		$trim_handle = null;
-	}
-	else if ($tpl == 81) {
-		$trim_blade = 1;
-		$trim_handle = 0.6;
-	}
-	else if ($tpl == 80) {
-		$trim_blade = 1.6;
-		$trim_handle = 1;
-	}
-	else if ($tpl == 79) {
-		$trim_blade = 2.2;
-		$trim_handle = 1.4;
-	}
-	else if ($tpl == 78) {
-		$trim_blade = 2.8;
-		$trim_handle = 1.8;
-	}
-	else if ($tpl == 77) {
-		$trim_blade = 3.4;
-		$trim_handle = 2.2;
-	}
-	else if ($tpl == 76) {
-		$trim_blade = 4;
-		$trim_handle = 2.6;
-	}
-	else if ($tpl == 75) {
-		$trim_blade = 4.6;
-		$trim_handle = 3;
-	}
-	else if ($tpl == 74) {
-		$trim_blade = 5.2;
-		$trim_handle = 3.4;
-	}
-	else if ($tpl == 73) {
-		$trim_blade = 5.8;
-		$trim_handle = 3.8;
-	}
-	else if ($tpl == 72) {
-		$trim_blade = 6.4;
-		$trim_handle = 4.2;
-	}
-	else if ($tpl == 71) {
-		$trim_blade = 7;
-		$trim_handle = 4.6;
-	}
-	else if ($tpl == 70) {
-		$trim_blade = 7.6;
-		$trim_handle = 5;
-	}
-	else if ($tpl == 69) {
-		$trim_blade = 8.2;
-		$trim_handle = 5.4;
-	}
-	else if ($tpl == 68) {
-		$trim_blade = 8.8;
-		$trim_handle = 5.8;
-	}
-	else if ($tpl == 67) {
-		$trim_blade = 9.4;
-		$trim_handle = 6.2;
-	}
-	else if ($tpl == 66) {
-		$trim_blade = 10;
-		$trim_handle = 6.6;
-	}
-	else if ($tpl == 65) {
-		$trim_blade = 10.6;
-		$trim_handle = 7;
-	}
-	else if ($tpl == 64) {
-		$trim_blade = 11.2;
-		$trim_handle = 7.4;
-	}
-	else if ($tpl == 63) {
-		$trim_blade = 11.8;
-		$trim_handle = 7.8;
-	}
-	else if ($tpl == 62) {
-		$trim_blade = 12.4;
-		$trim_handle = 8.2;
-	}
-	else if ($tpl == 61) {
-		$trim_blade = 13;
-		$trim_handle = 8.6;
-	}
-	else if ($tpl == 60) {
-		$trim_blade = 13.6;
-		$trim_handle = 9;
-	}
-	else if ($tpl == 59) {
-		$trim_blade = 14.2;
-		$trim_handle = 9.4;
-	}
-	else if ($tpl == 58) {
-		$trim_blade = 14.8;
-		$trim_handle = 9.8;
-	}
-	else {
-		$trim_blade = NULL;
-		$trim_handle = NULL;
-	}	
-	echo '<li>Blade End Trim Length: '.$trim_blade.' Inches</li>';
-	echo '<li>Handle End Trim Length: '.$trim_handle.' Inches</li>';
-} 
-?>
 <h2>Cut Instructions:</h2>
-<ul>
-<?php cutInstructions($totalpaddlelength); ?>
-</ul>
+<?php 
+if (isset($fitvars[11]) && isset($fitvars[12]) && isset($fitvars[13])) {
+	returnBladeCuttAttributes($totalpaddlelength,$pbladeType,$bladesize);
+} ?>
 <?php if ( $wpo_wcpdf->get_footer() ): ?>
 	<div id="footer">
 		<?php $wpo_wcpdf->footer(); ?>

@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', 'aztek_scripts' );
 function aztek_title( $title )
 {
 	if( empty( $title ) && ( is_home() || is_front_page() ) ) {
-		return __( 'Home', 'theme_domain' ) . ' | ' . get_bloginfo( 'description' );
+		return __( 'Home', 'theme_domain' ) . ' | '. get_bloginfo( 'name' ). ' | '. get_bloginfo( 'description' );
 	}
 	return $title;
 }
@@ -280,6 +280,12 @@ function jk_related_products_args( $args ) {
 	return $args;
 }
 
+add_filter( 'woocommerce_registration_redirect', 'krex_redirect'); 
+
+function krex_redirect( $redirect_to ) {
+	return 'http://aztekpaddles.com/get-fit';
+}
+
 add_theme_support( 'menus' );
 //Menu Registration
 register_nav_menus( array(
@@ -370,5 +376,13 @@ function instaGramFeed($userID, $accessToken){
 // Remove Default Sorting Dropdown
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+add_action( 'init', 'woocommerce_clear_cart_url' );
+function woocommerce_clear_cart_url() {
+	if ( isset( $_GET['clear-cart'] ) ) {
+		global $woocommerce;
+		$woocommerce->cart->empty_cart();
+	}
+}
 
 ?>

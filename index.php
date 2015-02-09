@@ -7,7 +7,7 @@
                     <div class="column half">
                         <div class="overlay">
                             <h1>Designed in a Lab <br/><span>Built for you.</span></h1>
-                            <p>Aztek&trade; Paddles create precision-tailored, performance standup paddles designed to add power and reduce fatigue. Whether you’re a beginner or a pro, Aztek Paddles are tuned to you.</p>
+                            <p>Aztek&trade; Paddles create precision-tailored, performance standup paddles designed to add power and reduce fatigue. Whether you're a beginner or a pro, Aztek Paddles are tuned to you.</p>
                             <a class="btn" href="<?php echo get_site_url(); ?>/get-fit">Get Fit <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                         <p class="price">$390.<span>00</span></p>
                     </div>
                     <div class="column two-thirds">
-                     <img src="<?php echo get_template_directory_uri(); ?>/images/race-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/race-paddle-zoom.png"/>
+                     <img width="787" height="149" src="<?php echo get_template_directory_uri(); ?>/images/race-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/race-paddle-zoom.png"/>
                  </div>
                  <div class="column sixth taligncenter">
                      <a href="<?php echo get_site_url(); ?>/buy-now/race-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
@@ -46,7 +46,7 @@
                     <p class="price">$390.<span>00</span></p>
                 </div>
                 <div class="column two-thirds">
-                 <img src="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-zoom.png">
+                 <img width="787" height="149" src="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-zoom.png">
              </div>
              <div class="column sixth taligncenter">
                  <a href="<?php echo get_site_url(); ?>/buy-now/surf-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
@@ -95,7 +95,7 @@
             <div class="column half">
                 <h4><b>ONE PADDLE.</b> <br />MANY OPTIONS.</h4>
                 <p>
-                  The Aztek&trade; TradeBlade system allows you to quickly swap blades with the twist of a wrench. No matter what type of paddling you want to do, Aztek™ Paddles’ interchangeable race and surf blades have you covered–all while simplifying storage and transport.
+                  The Aztek&trade; TradeBlade system allows you to quickly swap blades with the twist of a wrench. No matter what type of paddling you want to do, Aztek&trade; Paddles' interchangeable race and surf blades have you covered-all while simplifying storage and transport.
               </p>
               <a class="btn tech-button" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
           </div>

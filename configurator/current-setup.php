@@ -9,24 +9,26 @@
                       <label>Current Paddle Brand</label>
                       <select>
                         <option>Quickblade</option>
-                        <option>Surftech</option>
+                        <option>Kialoa</option>
+                        <option>Werner</option>
+                        <option>KeNalu</option>
                         <option>Riviera</option>
-                        <option>Yolo</option>
+                        <option>Other</option>
                       </select>
                     </p>
                     <div class="column half">
                       <p>
                         <label>Board Length</label>
-                       	<input type="text">
-                     </p>
-                   </div>
-                   <div class="column half">
-                    <p>
-                      <label>Paddle Length</label>
-                      <input type="text">
-                   </p>
-                 </div>
-                 <label>Likes/Dislikes</label>
-                 <textarea placeholder="What do you like/dislike about your current paddle?"></textarea>
-               </div>
-             </div>
+                        <input type="text">
+                      </p>
+                    </div>
+                    <div class="column half">
+                      <p>
+                        <label>Paddle Length</label>
+                        <input type="text">
+                      </p>
+                    </div>
+                    <label>Likes/Dislikes</label>
+                    <textarea placeholder="What do you like/dislike about your current paddle?"></textarea>
+                  </div>
+                </div>

@@ -11,8 +11,8 @@
                     <div class="column half taligncenter">
                         <div class="triangle">
                             <div class="toolTipWrap age">
-                                <label>Enter Age <span>(yrs)</span></label>
                                 <input type="text" name="age" readonly class="number" placeholder="00">
+                                <label>Enter Age <span>(yrs)</span></label>
                                 <div class="toolTip">
                                     <ul>
                                         <li value="15">&lt; 15 yrs</li>

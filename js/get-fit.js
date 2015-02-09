@@ -658,6 +658,7 @@ var totalScreens = jQuery(".screen").length;
 
 jQuery('.ui-bar button').click(function(){
 	setScreen();
+	jQuery("html, body").animate({ scrollTop: 0 }, "slow");
 });
 
 function setScreen() {
@@ -736,6 +737,7 @@ function validation() {
 	     }
 	     else if (currentScreen == 7) {
 	     	jQuery('.fit-config').hide();
+	     	jQuery('.ui-bar').hide();
 	     }
 	     jQuery('.progress-bar div').each(function(index) {
 
@@ -885,15 +887,7 @@ function add_to_cart(isCompletePaddle) {
 
 	var baseURL = 'http://'+window.location.hostname;
 	var actionURL = '?add-to-cart=';
-	var productID;
-
-	var shaftProductID = 25;
-	var bladeProductID = 24;
-	var handleProductID = 30;
-
-	var shaftVariationID;
-	var bladeVariationID;
-	var handleVariationID;
+	var productID = 498;
 
 	//Get Singular Items Attributes
 
@@ -910,81 +904,21 @@ function add_to_cart(isCompletePaddle) {
 
 	if (completePaddle == true) {
 
-		//Add the shaft
-
-		//Set the Shaft Variation ID
-
-		if (pshaftFlex == '225') {
-			shaftVariationID = 42;
-		}
-		else if (pshaftFlex == '250') {
-			shaftVariationID = 264;
-		}
-		else if (pshaftFlex == '275') {
-			shaftVariationID = 265;
-		}
-
-		var shaftURL = baseURL+actionURL+shaftProductID+'&variation_id='+shaftVariationID+'&attribute_pa_plength='+ptotalpaddleLength+'&attribute_pa_flex='+pshaftFlex;
-
-		//Add the Blade
-
-		//Set the Blade Variation ID
-
+		//Determine blade variation ID
 		if (pbladeType == 'Surf') {
-			if (pbladeSize == 70) {
-				bladeVariationID = 72;
-			}
-			else if (pbladeSize == 80) {
-				bladeVariationID = 73;
-			}
-			else if (pbladeSize == 85) {
-				bladeVariationID = 257;
-			}
-			else if (pbladeSize == 90) {
-				bladeVariationID = 258;
-			}
-			else if (pbladeSize == 95) {
-				bladeVariationID = 263;
-			}
+			bladeVariationID = 499;
 		}
 		else if (pbladeType == 'Race') {
-			if (pbladeSize <= 80) {
-				bladeVariationID = 260;
-				pbladeSize = 80;
-			}
-			else if (pbladeSize == 85) {
-				bladeVariationID = 261;
-			}
-			else if (pbladeSize == 90) {
-				bladeVariationID = 262;
-			}
-			else if (pbladeSize == 95) {
-				bladeVariationID = 263;
-			}
+			bladeVariationID = 500;
 		}
 
-		var bladeURL = baseURL+actionURL+bladeProductID+'&variation_id='+bladeVariationID+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize;
+		var completeURL = baseURL+actionURL+productID+'&variation_id='+bladeVariationID+'&attribute_pa_plength='+ptotalpaddleLength+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize+'&attribute_pa_flex='+pshaftFlex+'&attribute_pa_hsize='+phandleSize;
+		
+		saveToDatabase();
+		displayMessage('Configuring paddle, please wait!');
 
-		//Add the Handle
-
-		if (phandleSize == 'Large') {
-			handleVariationID = 52;
-		}
-		else if (phandleSize == 'Medium') {
-			handleVariationID = 53;
-		}
-		else if (phandleSize == 'Small') {
-			handleVariationID = 54;
-		}
-
-		var handleURL = baseURL+actionURL+handleProductID+'&variation_id='+handleVariationID+'&attribute_pa_hsize='+phandleSize;
-
-		jQuery.get(bladeURL).done(function( data ) {
-			jQuery.get(handleURL).done(function(data){
-				jQuery.get(shaftURL).done(function(data){
-					window.location.href = 'http://aztekpaddles.com/cart';
-				});
-			});
+		jQuery.get(completeURL).done(function( data ) {
+			window.location.href = 'http://aztekpaddles.com/cart';
 		});
 
 	}
@@ -1031,9 +965,6 @@ function add_to_cart(isCompletePaddle) {
 		});
 	}
 
-
-
-
 }
 
 function add_all_to_cart() {
@@ -1063,7 +994,7 @@ function loadFromDataBase() {
 			ResetUIChanges();
 		}
 		else {
-			displayLogin();
+			//displayLogin();
 		}
 	});
 
@@ -1072,6 +1003,9 @@ function loadFromDataBase() {
 loadFromDataBase();
 
 function saveToDatabase() {
+
+	var pbladeType = jQuery('.c-paddle-add').parent().parent().find('.bladeType').text();
+	var pbladeSize = jQuery('.c-paddle-add').parent().parent().find('.bladeSize').text();
 
 	var url = 'http://'+window.location.hostname;
 	allVars = [];
@@ -1087,6 +1021,8 @@ function saveToDatabase() {
 	allVars.push(skillLevel);
 	allVars.push(paddleStyle);
 	allVars.push(calculateTotalPaddleLength());
+	allVars.push(pbladeType);
+	allVars.push(pbladeSize);
 	allVars = allVars.toString();
 	jQuery.get( url, { save_fit: "true", fit_profile_one: allVars, fit_profile_gender: gender, fit_profile_age: age, fit_profile_height: height, fit_profile_weight: weight, fit_profile_hsize: handSize, fit_profile_boardthickness: boardThickness, fit_profile_skilllvl: skillLevel, fit_profile_paddlestyle: paddleStyle }, function( data ) {
 		if (data != '') {
@@ -1095,6 +1031,14 @@ function saveToDatabase() {
 		else {
 			displayLogin();
 		}
+		displayMessage('Your fit profile has been saved!');
+	});
+}
+
+function displayMessage(msg) {
+	jQuery('.msg-bar .container').empty().prepend('<p>'+msg+'</p>');
+	jQuery('.msg-bar').fadeIn('fast', function(){
+		jQuery('.msg-bar').delay(3000).fadeOut('fast');
 	});
 }
 
@@ -1118,7 +1062,7 @@ function resetData() {
 	Race = false;
 }
 
-jQuery('.savefit').click(function(){
+jQuery('.savefit').click(function(event){
 	event.preventDefault();
 	saveToDatabase();
 });
@@ -1141,13 +1085,13 @@ jQuery('.login button.close').click(function(){
 	displayLogin();
 });
 
-jQuery('.c-paddle-add').click(function(){
-	event.preventDefault();
+jQuery('.c-paddle-add').click(function(event){
+	event.preventDefault(event);
 	add_to_cart(true);
 });
 
-jQuery('.s-product-add').click(function(){
-	event.preventDefault();
+jQuery('.s-product-add').click(function(event){
+	event.preventDefault(event);
 	add_to_cart(false);
 });
 

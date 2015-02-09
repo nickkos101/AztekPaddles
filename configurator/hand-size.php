@@ -15,6 +15,6 @@
                             </div>
                         </div>
                         <div class="column half talignleft">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/hand-size.png" alt="hand-size-measurement">
+                            <img class="hand-graphic" src="<?php echo get_template_directory_uri(); ?>/images/hand-size.png" alt="hand-size-measurement">
                         </div>
                     </div>

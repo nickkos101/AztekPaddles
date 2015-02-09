@@ -33,7 +33,7 @@
                 <?php dynamic_sidebar( 'sidebar-5' ); ?>
             </div>
             <div class="column full taligncenter">
-                <p class="copyright">&copy; Aztek Paddles A. BST Nano Carbon Company 2015. All Rights Reserved. <a href="http://inspyregroup.com" target="_blank" title="ecommerce web design">Ecommerce design by INSPYRE.</a></p>
+                <p class="copyright">&copy; Aztek Paddles - a BST Nano Carbon company 2015. All Rights Reserved. <a href="http://inspyregroup.com" target="_blank" title="ecommerce web design">Ecommerce design by INSPYRE.</a></p>
             </div>
         </div>
     </div>
