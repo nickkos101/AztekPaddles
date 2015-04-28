@@ -2,6 +2,7 @@
                     <div class="column third">
                         <h4><b>Intended</b> Use</h4>
                         <p>Each blade is designed to perfect your performance, factoring in your body measurements, usage, skill and style.</p>
+                        <p>( Please select all that apply. )</p>
                     </div>
                     <div class="column two-thirds taligncenter intended-use">
                         <div class="column third">

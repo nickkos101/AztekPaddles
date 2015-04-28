@@ -5,7 +5,13 @@
 		<div class="wc-aztek-border"></div>
 		<div class="product-cat-page products">
 			<div class="container">
-				<?php query_posts(array('posts_per_page' => -1, 'post_type' => 'product','product_cat' => 'paddles' , 'orderby' => 'menu_order')); ?>
+				<?php query_posts(array('posts_per_page' => -1, 'post_type' => 'product','product_cat' => 'paddles' , 'orderby' => 'menu_order', 			'meta_query' => array(
+				array(
+					'key' => '_visibility',
+					'value' => array( 'catalog', 'visible' ),
+					'compare' => 'IN'
+					),
+				),)); ?>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<div class="full column">
 					<div class="product-cat-items complete-paddle paddle">
@@ -22,7 +28,7 @@
 							?>
 						</div>
 						<div class="column sixth taligncenter">
-							<a href="<?php echo get_site_url(); ?>/buy-now/<?php echo($post->post_name) ?>" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
+							<a href="<?php the_permalink(); ?>" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>

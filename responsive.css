@@ -49,10 +49,16 @@
 	.atom-weave .overlay {top:0px;}
 	.atom-weave .overlay h2 {font-size:3.8em;}
 	.atom-weave .overlay p {font-size: 1.8em;}
+
+	.lpage .slider {height: auto;}
+	.lpage .slider .half {width: 100%;}
+	.lp-signup {position: relative; width: auto; margin: 0px; top:auto;}
+	.lp-signup .talignright {text-align: center;}
 }
 
 @media (max-width:980px) {
 	.mini-container {padding-left: 10px; padding-right: 10px;}
+	.slider .dark-opaque .paddles { margin-left: 23%; width: 100%; text-align: center; }
 	
 	header nav {display: none;}
 	header .logo {padding-left:20px;}
@@ -108,6 +114,10 @@
 
 	.atom-weave .overlay h2 {font-size:2.8em;}
 	.atom-weave .overlay p {font-size: 1.2em;}
+
+	main.lpage .lp-panel .half {width: 100% !important;}
+	main.lpage .lp-panel .half {padding-bottom: 25px !important;}
+	.lp-panel {padding-top: 55px; padding-bottom: 55px;}
 }
 
 @media (max-width:880px) {
@@ -116,6 +126,9 @@
 }
 
 @media (max-width:769px) {
+    .dark-opaque .paddles {display: none;}
+    main .slider .dark-opaque .column.half {width: 100% !important;}
+    main .slider .dark-opaque .overlay p {font-size: 19px; line-height: 1.4;}
 
 	.california h4 {font-size:20px; line-height:22px;}
 	.california p {font-size: 14px;}
@@ -148,6 +161,7 @@
 	.related-products {text-align: center;}
 	.checkout .col-1, .checkout .col-2 { width: 100% !important; }
 
+	main.lpage .slider .half {width: 100% !important;}
 
 	/* Fit Config */
 
@@ -179,6 +193,14 @@
 }
 
 @media (max-width:480px) {
+	.lpage .overlay h1 {text-align: center;}
+.lpage .overlay p {font-size: 16px;}
+.lpage label {font-weight: normal !important; font-size: 14px !important;}
+.lpage .salesforce_w2l_lead .w2lsubmit {text-align: center;}
+main.lpage .slider {
+  height: auto !important;
+}
+main .slider .slide .overlay.landing-overlay {padding: 15px 0;}
 	main {width: 100%; overflow: hidden;}
 	.newsletter input[type=email] { font-weight: 100; width: 279px !important; }
 
@@ -261,10 +283,14 @@
 		margin-right: 0!important;
 		margin-left:0 !important;
 	}
+main.lpage .mini-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 }
 
 @media (max-width:380px) {
-	.overlay p {display: none !important;}
+
 	.top-anim { margin-left: -31px !important; margin-top: -96px !important; }
 	.bot-anim {display: none !important;}
 	main .slider {height: 470px !important;}

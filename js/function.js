@@ -52,6 +52,19 @@ jQuery(document).ready(function(){
     adaptiveHeight: true
   });
 
+    jQuery('.hptemp').slick({
+    infinite: true,
+    autoplay: true,
+    arrows: true,
+    dots: true,
+    autoplaySpeed:4000,
+    speed: 500,
+    fade: true,
+    slide: 'div',
+    cssEase: 'linear',
+    adaptiveHeight: true
+  });
+
   jQuery('.endorsement').slick({
     infinite: false,
     autoplay: false,
@@ -261,5 +274,12 @@ jQuery('.thumbnails .img-swap').click(function(){
 jQuery('.respMenu i').click(function(){
 jQuery('.respMenu-sub').slideToggle();
 });
+
+
+// FAQ Page
+
+jQuery('.faq').click(function(){
+  jQuery(this).find('.answer').slideToggle();
+}); 
 
 });

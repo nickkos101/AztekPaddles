@@ -36,7 +36,7 @@ ul#shipping_method li label {font-size: 14px;}
 .shipping-calculator-form input[type=text], .shipping-calculator-form input[type=password], .shipping-calculator-form input[type=email], .shipping-calculator-form input[type=number] { padding: 10px 15px; border-radius: 4px; background: #fafafa; border: 1px solid #eee;}
 
 /* Woocommerce Checkout */
-
+.checkout form.login {display: block !important;}
 .checkout h4:first-of-type {font-size: 44px; border-bottom: 1px solid #ccc;	margin:0px;	padding:20px 0px; font-style: italic; text-transform: uppercase; font-weight: bold; }
 .checkout h3 {border-bottom: 1px solid #ccc; margin: 0px; padding: 20px 0px; font-size: 24px; text-transform: uppercase; font-weight: 300; font-style: italic  }
 .checkout h3 label {font-size:24px;}
@@ -151,9 +151,10 @@ mark { background: #A4E7DE; color: #000; }
 .product .composite_error {background-color: #B5DBD7; color: #fff; font-weight: normal; font-style: normal; padding: 20px 45px; display: block; font-size: 18px !important; text-align: left;}
 .product .composite_button {text-align: left;}
 .product .composite_button .quantity { margin-bottom: 20px;}
-.product .component .component_description {margin-bottom: 0px;}
+.product .component .component_description {margin-bottom: 0px; font-size: 16px;}
 .component_option_thumbnail img { margin: 0; width: 100%; height: auto; }
 .component .component_option_thumbnail .image { width: 100%; height: auto; }
+.product div[data-nav_title="Intended Use"] .component_option_thumbnail_container { display: inline-block; width: 20%; padding: 10px; }
 .product div[data-nav_title="Choose Blade Type"] .component_option_thumbnail_container { display: inline-block; width: 20%; padding: 10px; }
 .product div[data-nav_title="Choose Handle Size"] .component_option_thumbnail_container { display: inline-block; width: 20%; padding: 10px; }
 .product div[data-nav_title="Choose Shaft Flex"] .component_option_thumbnail_container { display: inline-block; width: 20%%; padding: 10px; }
@@ -262,5 +263,9 @@ h3.checkout-title {font-size: 36px; line-height: normal; padding: 0; padding-top
 .cart-collaterals .cross-sells .fourth:last-of-type img {width: 97%;}
 p.cart-empty {margin-top: 100px;}
 .cart-style .woocommerce-error {margin-top: 75px;}
+
+.details table {width:100%; border:1px solid #eee;}
+.details td {border:1px solid #eee; padding:5px;}
+.details h4 {padding-left: 0px;}
 
 /*Debugging */

@@ -1,6 +1,6 @@
-<?php /* Template Name: Fit Configurator */ ?>
-<?php get_header(); ?>
-<?php wp_enqueue_script( 'getfit', get_template_directory_uri() . '/js/get-fit.js', array('jquery', 'zoom', 'jqueryuimin', 'function'), '1.0.0', true ); ?>
+<?php /* Template Name: Fit Configurator Test */ ?>
+<?php get_template_part('header', 'two'); ?>
+<?php wp_enqueue_script( 'getfitchallenge', get_template_directory_uri() . '/js/get-fit-challenge.js', array('jquery', 'zoom', 'jqueryuimin', 'function'), '1.0.0', true ); ?>
 <main>
     <div class="gray-wrap radial col-wrap">
         <div class="mini-container">
@@ -15,9 +15,9 @@
                 <?php include 'configurator/more-info.php'; ?>
             </div>
         </div>
-        <?php include 'configurator/results-override.php'; ?>
+        <?php include 'configurator/results-override-test.php'; ?>
         <?php include 'configurator/fit-slots-prompt.php'; ?>
-        <?php include 'configurator/load-slots-prompt.php'; ?>
+        <?php // include 'configurator/load-slots-prompt.php'; ?>
         <div class="mini-container">
             <div class="ui-bar">
                 <div class="four-fifths column">
@@ -40,4 +40,4 @@
     </div>
 </div>
 </main>
-<?php get_footer(); ?>
+<?php get_template_part('footer', 'two'); ?>

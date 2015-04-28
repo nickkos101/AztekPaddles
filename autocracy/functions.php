@@ -71,4 +71,22 @@ function autoc_get_postdata($id) {
         return $postdata[0];
 }
 
+function autoc_get_img_src($id) {
+        global $wpdb;
+        $images = get_post_meta( get_the_ID(), $id, false);
+        $images = implode( ',' , $images );
+        $images = $wpdb->get_col( "
+                SELECT ID FROM {$wpdb->posts}
+                WHERE post_type = 'attachment'
+                AND ID in ({$images})
+                ORDER BY menu_order ASC
+                " );
+        foreach ( $images as $att )
+        {
+                $src = wp_get_attachment_image_src( $att, 'full' );
+                $src = $src[0];
+                return $src;
+        }
+}
+
 ?>

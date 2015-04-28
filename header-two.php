@@ -46,12 +46,12 @@
     <header class="header">
         <div class="container">
             <div class="col-wrap">
-                <div class="column third logo">
-                    <a href="<?php $url = home_url(); echo $url; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Aztek Paddles"/></a>
+                <div class="column full logo taligncenter">
+                    <a href="/go/aztek-challenge"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Aztek Paddles"/></a>
                 </div>
-                <a href="<?php echo get_site_url(); ?>/get-fit"><img src="<?php echo get_template_directory_uri(); ?>/images/get-fit.png" class="get-fit"></a>
+               <!-- <a href="<?php echo get_site_url(); ?>/get-fit"><img src="<?php echo get_template_directory_uri(); ?>/images/get-fit.png" class="get-fit"></a> -->
                 <div class="column two-thirds talignright">
-                    <nav>
+                   <!-- <nav>
                         <div class="social-media">
                             <a href="https://www.facebook.com/AztekPaddles" target="_blank" title="Follow Aztek Paddles on facebook"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="facebook" /></a>
                             <a href="https://twitter.com/AztekPaddles" target="_blank" title="Follow Aztek Paddles on twitter"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" alt="twitter" /></a>
@@ -76,7 +76,7 @@
                             <li><a href="">Events</a></li>
                             <li><a href="">Contact Us</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
         </div>

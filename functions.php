@@ -21,6 +21,12 @@ function aztek_scripts() {
 	wp_enqueue_style( 'responsive' );
 	wp_register_style( 'woo', get_template_directory_uri() . '/woo.css' );
 	wp_enqueue_style( 'woo' );
+
+	wp_register_style( 'byo', get_template_directory_uri() . '/byo/byo.css' );
+	if (is_page_template( 'byo.php' )) {
+		wp_enqueue_style( 'byo' );
+		wp_enqueue_script( 'byo', get_template_directory_uri() . '/byo/byo.js', array('jquery', 'jqueryuimin'), '1.0.0', true );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'aztek_scripts' );
@@ -46,57 +52,21 @@ function fit_profile_fields( $user ) { ?>
 <h3>Fit Profile Info</h3>
 <table class="form-table">
 	<tr>
-		<th><label for="fit_profile_one">Fit Profile String</label></th>
+		<th><label for="fit_profile_one">Fit Profile 1 String</label></th>
 		<td>
 			<input type="text" name="fit_profile_one" id="fit_profile_one" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_one', $user->ID ) ); ?>" class="regular-text" /><br />
 		</td>
 	</tr>
 	<tr>
-		<th><label for="fit_profile_gender">Fit Profile Gender</label></th>
+		<th><label for="fit_profile_two">Fit Profile 2 String</label></th>
 		<td>
-			<input type="text" name="fit_profile_gender" id="fit_profile_gender" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_gender', $user->ID ) ); ?>" class="regular-text" /><br />
+			<input type="text" name="fit_profile_two" id="fit_profile_two" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_two', $user->ID ) ); ?>" class="regular-text" /><br />
 		</td>
 	</tr>
 	<tr>
-		<th><label for="fit_profile_age">Fit Profile Age</label></th>
+		<th><label for="fit_profile_three">Fit Profile 3 String</label></th>
 		<td>
-			<input type="text" name="fit_profile_age" id="fit_profile_age" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_age', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Height</label></th>
-		<td>
-			<input type="text" name="fit_profile_height" id="fit_profile_height" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_height', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Weight</label></th>
-		<td>
-			<input type="text" name="fit_profile_weight" id="fit_profile_weight" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_weight', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Hand Size</label></th>
-		<td>
-			<input type="text" name="fit_profile_hsize" id="fit_profile_hsize" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_hsize', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Board Thickness</label></th>
-		<td>
-			<input type="text" name="fit_profile_boardthickness" id="fit_profile_boardthickness" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_boardthickness', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Skill Level</label></th>
-		<td>
-			<input type="text" name="fit_profile_skilllvl" id="fit_profile_skilllvl" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_skilllvl', $user->ID ) ); ?>" class="regular-text" /><br />
-		</td>
-	</tr>
-	<tr>
-		<th><label for="fit_profile_height">Fit Profile Paddle Style</label></th>
-		<td>
-			<input type="text" name="fit_profile_paddlestyle" id="fit_profile_paddlestyle" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_paddlestyle', $user->ID ) ); ?>" class="regular-text" /><br />
+			<input type="text" name="fit_profile_three" id="fit_profile_three" value="<?php echo esc_attr( get_the_author_meta( 'fit_profile_three', $user->ID ) ); ?>" class="regular-text" /><br />
 		</td>
 	</tr>
 </table>
@@ -112,14 +82,8 @@ function fit_profile_save_fields( $user_id ) {
 
 	/* Copy and paste this line for additional fields. Make sure to change 'fit_profile_one' to the field ID. */
 	update_usermeta( $user_id, 'fit_profile_one', $_POST['fit_profile_one'] );
-	update_usermeta( $user_id, 'fit_profile_gender', $_POST['fit_profile_gender'] );
-	update_usermeta( $user_id, 'fit_profile_age', $_POST['fit_profile_age'] );
-	update_usermeta( $user_id, 'fit_profile_height', $_POST['fit_profile_height'] );
-	update_usermeta( $user_id, 'fit_profile_weight', $_POST['fit_profile_weight'] );
-	update_usermeta( $user_id, 'fit_profile_hsize', $_POST['fit_profile_hsize'] );
-	update_usermeta( $user_id, 'fit_profile_boardthickness', $_POST['fit_profile_boardthickness'] );
-	update_usermeta( $user_id, 'fit_profile_skilllvl', $_POST['fit_profile_skilllvl'] );
-	update_usermeta( $user_id, 'fit_profile_paddlestyle', $_POST['fit_profile_paddlestyle'] );
+	update_usermeta( $user_id, 'fit_profile_two', $_POST['fit_profile_two'] );
+	update_usermeta( $user_id, 'fit_profile_three', $_POST['fit_profile_three'] );
 }
 
 //Front End Saving
@@ -127,15 +91,7 @@ function fit_profile_save_fields( $user_id ) {
 if (isset($_REQUEST['save_fit'])){
 	if(is_user_logged_in()) {
 		$user_id = get_current_user_id();
-		update_usermeta( $user_id, 'fit_profile_one', $_REQUEST['fit_profile_one'] );
-		update_usermeta( $user_id, 'fit_profile_gender', $_REQUEST['fit_profile_gender'] );
-		update_usermeta( $user_id, 'fit_profile_age', $_REQUEST['fit_profile_age'] );
-		update_usermeta( $user_id, 'fit_profile_height', $_REQUEST['fit_profile_height'] );
-		update_usermeta( $user_id, 'fit_profile_weight', $_REQUEST['fit_profile_weight'] );
-		update_usermeta( $user_id, 'fit_profile_hsize', $_REQUEST['fit_profile_hsize'] );
-		update_usermeta( $user_id, 'fit_profile_boardthickness', $_REQUEST['fit_profile_boardthickness'] );
-		update_usermeta( $user_id, 'fit_profile_skilllvl', $_REQUEST['fit_profile_skilllvl'] );
-		update_usermeta( $user_id, 'fit_profile_paddlestyle', $_REQUEST['fit_profile_paddlestyle'] );
+		update_usermeta( $user_id, $_REQUEST['save_fit'], $_REQUEST['fit_data'] );
 	}
 	else {
 		echo false;
@@ -146,7 +102,7 @@ if (isset($_REQUEST['save_fit'])){
 if (isset($_REQUEST['load_fit'])){
 	if(is_user_logged_in()) {
 		$user_id = get_current_user_id();
-		$string = get_the_author_meta( 'fit_profile_one', $user_id);
+		$string = get_the_author_meta($_REQUEST['load_fit'], $user_id);
 		echo $string;
 		exit;
 	}
@@ -179,6 +135,39 @@ function aztek_create_post_type() {
 		'rewrite' => array('slug' => 'endorsement-slider'),
 		'menu_icon' => 'dashicons-share',
 		'supports' => array('title','editor','thumbnail')
+		)
+	);
+	register_post_type('faq', array(
+		'labels' => array(
+			'name' => __('FAQs'),
+			'singular_name' => __('FAQ')
+			),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'faq'),
+		'supports' => array('title','editor')
+		)
+	);
+	register_post_type('videos', array(
+		'labels' => array(
+			'name' => __('Videos'),
+			'singular_name' => __('Video')
+			),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'videos'),
+		'supports' => array('title')
+		)
+	);
+	register_post_type('landingpages', array(
+		'labels' => array(
+			'name' => __('Landing Pages'),
+			'singular_name' => __('Landing Page')
+			),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'go'),
+		'supports' => array('title')
 		)
 	);
 }
@@ -368,8 +357,10 @@ function instaGramFeed($userID, $accessToken){
 	$result = curl_exec($ch);
 	curl_close($ch); 
 	$result = json_decode($result);
-	foreach ($result->data as $post) {
+	$i = 0;
+	foreach ($result->data as $post) if ($i < 10) {
 		echo '<div><a target="_blank" href="'.$post->link.'"><img src="'.$post->images->low_resolution->url.'"></a></div>';
+		$i++;
 	} 
 }
 
@@ -384,5 +375,90 @@ function woocommerce_clear_cart_url() {
 		$woocommerce->cart->empty_cart();
 	}
 }
+
+/**
+ * Add new register fields for WooCommerce registration.
+ *
+ * @return string Register fields HTML.
+ */
+function wooc_extra_register_fields() {
+	?>
+
+	<p class="form-row form-row-first">
+		<label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
+	</p>
+
+	<p class="form-row form-row-last">
+		<label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
+		<input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
+	</p>
+
+	<div class="clear"></div>
+
+
+
+	<?php
+}
+
+add_action( 'woocommerce_register_form_start', 'wooc_extra_register_fields' );
+
+/**
+ * Validate the extra register fields.
+ *
+ * @param  string $username          Current username.
+ * @param  string $email             Current email.
+ * @param  object $validation_errors WP_Error object.
+ *
+ * @return void
+ */
+function wooc_validate_extra_register_fields( $username, $email, $validation_errors ) {
+	if ( isset( $_POST['billing_first_name'] ) && empty( $_POST['billing_first_name'] ) ) {
+		$validation_errors->add( 'billing_first_name_error', __( '<strong>Error</strong>: First name is required!', 'woocommerce' ) );
+	}
+
+	if ( isset( $_POST['billing_last_name'] ) && empty( $_POST['billing_last_name'] ) ) {
+		$validation_errors->add( 'billing_last_name_error', __( '<strong>Error</strong>: Last name is required!.', 'woocommerce' ) );
+	}
+
+
+	if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
+		$validation_errors->add( 'billing_phone_error', __( '<strong>Error</strong>: Phone is required!.', 'woocommerce' ) );
+	}
+}
+
+add_action( 'woocommerce_register_post', 'wooc_validate_extra_register_fields', 10, 3 );
+
+/**
+ * Save the extra register fields.
+ *
+ * @param  int  $customer_id Current customer ID.
+ *
+ * @return void
+ */
+function wooc_save_extra_register_fields( $customer_id ) {
+	if ( isset( $_POST['billing_first_name'] ) ) {
+		// WordPress default first name field.
+		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+
+		// WooCommerce billing first name.
+		update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+	}
+
+	if ( isset( $_POST['billing_last_name'] ) ) {
+		// WordPress default last name field.
+		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+
+		// WooCommerce billing last name.
+		update_user_meta( $customer_id, 'billing_last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+	}
+
+	if ( isset( $_POST['billing_phone'] ) ) {
+		// WooCommerce billing phone
+		update_user_meta( $customer_id, 'billing_phone', sanitize_text_field( $_POST['billing_phone'] ) );
+	}
+}
+
+add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
 
 ?>

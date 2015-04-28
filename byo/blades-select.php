@@ -1,0 +1,9 @@
+<option value="surf 95">Surf 95 Blade</option>
+<option value="surf 90">Surf 90 Blade</option>
+<option value="surf 85">Surf 85 Blade</option>
+<option value="surf 80">Surf 80 Blade</option>
+<option value="surf 70">Surf 70 Blade</option>
+<option value="race 95">Race 95 Blade</option>
+<option value="race 90">Race 90 Blade</option>
+<option value="race 85">Race 85 Blade</option>
+<option value="race 80">Race 80 Blade</option>

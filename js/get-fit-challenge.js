@@ -895,7 +895,7 @@ function add_to_cart(isCompletePaddle) {
 
 	var baseURL = 'http://'+window.location.hostname;
 	var actionURL = '?add-to-cart=';
-	var productID = 498;
+	var productID = 690;
 
 	//Get Singular Items Attributes
 
@@ -916,10 +916,10 @@ function add_to_cart(isCompletePaddle) {
 
 		//Determine blade variation ID
 		if (pbladeType == 'Surf') {
-			bladeVariationID = 499;
+			bladeVariationID = 692;
 		}
 		else if (pbladeType == 'Race') {
-			bladeVariationID = 500;
+			bladeVariationID = 691;
 		}
 
 		var completeURL = baseURL+actionURL+productID+'&variation_id='+bladeVariationID+'&attribute_pa_plength='+ptotalpaddleLength+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize+'&attribute_pa_flex='+pshaftFlex+'&attribute_pa_hsize='+phandleSize;
@@ -928,7 +928,7 @@ function add_to_cart(isCompletePaddle) {
 		displayMessage('Configuring paddle, please wait!');
 
 		jQuery.get(completeURL).done(function( data ) {
-			window.location.href = 'http://aztekpaddles.com/cart';
+			window.location.href = 'http://aztekpaddles.com/challenge-cart';
 		});
 
 	}
@@ -971,7 +971,7 @@ function add_to_cart(isCompletePaddle) {
 
 		var bladeURL = baseURL+actionURL+bladeProductID+'&variation_id='+bladeVariationID+'&attribute_pa_blade-type='+pbladeType+'&attribute_pa_bsize='+pbladeSize;
 		jQuery.get(bladeURL).done(function( data ) {
-			window.location.href = 'http://aztekpaddles.com/cart';
+			window.location.href = 'http://aztekpaddles.com/challenge-cart';
 		});
 	}
 

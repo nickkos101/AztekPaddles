@@ -36,7 +36,7 @@
                      <img width="787" height="149" src="<?php echo get_template_directory_uri(); ?>/images/race-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/race-paddle-zoom.png"/>
                  </div>
                  <div class="column sixth taligncenter">
-                     <a href="<?php echo get_site_url(); ?>/buy-now/race-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
+                     <a href="<?php echo get_site_url(); ?>/shop/paddles/race-paddle/" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
                  </div>
              </div>
              <div class="paddle">
@@ -49,7 +49,7 @@
                  <img width="787" height="149" src="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-display.png" data-zoom-image="<?php echo get_template_directory_uri(); ?>/images/surf-paddle-zoom.png">
              </div>
              <div class="column sixth taligncenter">
-                 <a href="<?php echo get_site_url(); ?>/buy-now/surf-paddle" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
+                 <a href="<?php echo get_site_url(); ?>/shop/paddles/surf-paddle/" class="buy-now">Buy Now <i class="fa fa-angle-right"></i></a>
              </div>
          </div>
      </div>
@@ -112,7 +112,7 @@
                 <p>
                     Our forefathers took great pride in craftsmanship, and so do we. As carbon fiber pioneers, BST Nano Carbon combines bioengineering with impeccable craftsmanship, resulting in the most technically advanced, human-centric standup paddle products on the market.
                 </p>
-                <a class="btn tech-button" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
+                <a class="btn tech-button alignright" href="<?php echo get_site_url(); ?>/technology">Read More <i class="fa fa-angle-right"></i></a>
 
             </div>
         </div>
@@ -130,55 +130,6 @@
     </div>
 <?php endwhile; else: ?>
 <?php endif; ?>
-</div>
-<div class="gray-wrap dots">
-    <div class="darken">
-        <div class="container">
-            <h5 class="taligncenter"><b>In The</b> Wild</h5>
-            <div class="col-wrap blog">
-                <div class="column three-fourths">
-                    <div class="white-vfix">
-                        <div class="column half">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/surfer.jpg">
-                        </div>
-                        <div class="column half white-wrap">
-                            <p class="date">December 30, 2014</p>
-                            <h6>Aztek makes a splash at HanoHano Huki</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column fourth">
-                    <div class="column full">
-                        <div class="white-vfix">
-                            <div class="column half">
-                             <img src="<?php echo get_template_directory_uri(); ?>/images/bikini-tall.jpg">
-                         </div>
-                         <div class="column half white-wrap">
-                           <p class="date">December 24, 2014</p>
-                           <h6>Nano Tube Com-posting Builds Strength</h6>
-                       </div>
-                   </div>
-               </div>
-               <div class="column full">
-                <div class="white-vfix">
-                    <div class="column half">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/dog-tall.jpg">
-                    </div>
-                    <div class="column half white-wrap">
-                       <p class="date">December 22, 2014</p>
-                       <h6>Paying Respect to Thomas Edward Blake</h6>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-</div>
-</div>
 </div>
 <div class="social-carousel">
         <?php instaGramFeed('1652549489','1652549489.5b9e1e6.a5206f094b2c44c091e373ce7f081831'); ?>

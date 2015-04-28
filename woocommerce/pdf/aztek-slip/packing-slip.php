@@ -51,14 +51,46 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php $items = $wpo_wcpdf->get_order_items(); if( sizeof( $items ) > 0 ) : foreach( $items as $item ) : ?>
+		<?php $items = $wpo_wcpdf->get_order_items(); if( sizeof( $items ) > 0 ) : foreach( $items as $item_id => $item ) : ?>
 		<tr>
-			<td class="description">
-				<span class="item-name"><?php echo $item['name']; ?></span><span class="item-meta"><?php echo $item['meta']; ?></span>
-				<dl class="meta">
-					<?php if( !empty( $item['sku'] ) ) : ?><dt><?php _e( 'SKU:', 'wpo_wcpdf' ); ?></dt><dd><?php echo $item['sku']; ?></dd><?php endif; ?>
-					<?php if( !empty( $item['weight'] ) ) : ?><dt><?php _e( 'Weight:', 'wpo_wcpdf' ); ?></dt><dd><?php echo $item['weight']; ?><?php echo get_option('woocommerce_weight_unit'); ?></dd><?php endif; ?>
+			<td class="product">
+				<?php $description_label = __( 'Description', 'wpo_wcpdf' ); // registering alternate label translation ?>
+				<span class="item-name"><?php echo $item['name']; ?></span>
+				<?php do_action( 'wpo_wcpdf_before_item_meta', $wpo_wcpdf->export->template_type, $item, $wpo_wcpdf->export->order  ); ?>
+				<div class="item-meta">
+					<?php echo $item['meta']; ?>
+					<!--
+					<?php if (isset($item['item']['pa_plength'])) { ?>
+					<dt>Paddle Length:</dt>
+					<dd><?php echo $item['item']['pa_plength']; ?></dd>
+					<?php } ?>
+					<?php if (isset($item['item']['pa_blade-type'])) { ?>
+					<dt>Blade Type:</dt>
+					<dd><?php echo $item['item']['pa_blade-type']; ?></dd>
+					<?php } ?>
+					<?php if (isset($item['item']['pa_bsize'])) { ?>
+					<dt>Blade Size:</dt>
+					<dd><?php echo $item['item']['pa_bsize']; ?></dd>
+					<?php } ?>
+					<?php if (isset($item['item']['pa_flex'])) { ?>
+					<dt>Flex Rating:</dt>
+					<dd><?php echo $item['item']['pa_flex']; ?></dd>
+					<?php } ?>
+					<?php if (isset($item['item']['pa_hsize'])) { ?>
+					<dt>Handle Size:</dt>
+					<dd><?php echo $item['item']['pa_hsize']; ?></dd>
+					<?php } ?>
+				-->
+				</div>
+				<dl class="cut-instructions">
+					<?php if (isset($item['item']['pa_plength'])) { returnBladeCuttAttributes($item['item']['pa_plength'],$item['item']['pa_blade-type'],$item['item']['pa_bsize']); } ?>
 				</dl>
+				<dl class="meta">
+					<?php $description_label = __( 'SKU', 'wpo_wcpdf' ); // registering alternate label translation ?>
+					<?php if( !empty( $item['sku'] ) ) : ?><dt class="sku"><?php _e( 'SKU:', 'wpo_wcpdf' ); ?></dt><dd class="sku"><?php echo $item['sku']; ?></dd><?php endif; ?>
+					<?php if( !empty( $item['weight'] ) ) : ?><dt class="weight"><?php _e( 'Weight:', 'wpo_wcpdf' ); ?></dt><dd class="weight"><?php echo $item['weight']; ?><?php echo get_option('woocommerce_weight_unit'); ?></dd><?php endif; ?>
+				</dl>
+				<?php do_action( 'wpo_wcpdf_after_item_meta', $wpo_wcpdf->export->template_type, $item, $wpo_wcpdf->export->order  ); ?>
 			</td>
 			<td class="quantity"><?php echo $item['quantity']; ?></td>
 		</tr>
@@ -80,116 +112,6 @@
 	</td>
 </tr>
 </table><!-- notes container -->
-<?php
-$order_id = $wpo_wcpdf->get_order_number();
-$order = new WC_Order($order_id);
-$user_id = $order->user_id;
-$fitstring =  get_the_author_meta( 'fit_profile_one', $user_id);
-$fitvars = explode( ',', $fitstring );
-$totalpaddlelength = $fitvars[11];
-$pbladeType = $fitvars[12];
-$bladesize = $fitvars[13];
-?>
-<table>
-	<thead>
-		<th>Fit Profile Attributes</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Sex:</td>
-			<td><?php
-			if (isset($fitvars[0])) {
-				echo $fitvars[0];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Age:</td>
-			<td><?php
-			if (isset($fitvars[1])) {
-				echo $fitvars[1];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Height:</td>
-			<td><?php
-			if (isset($fitvars[2])) {
-				echo $fitvars[2];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Weight:</td>
-			<td><?php
-			if (isset($fitvars[3])) {
-				echo $fitvars[3];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Hand Size:</td>
-			<td><?php
-			if (isset($fitvars[4])) {
-				echo $fitvars[4];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Board Thickness:</td>
-			<td><?php
-			if (isset($fitvars[8])) {
-				echo $fitvars[8];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Skill Level:</td>
-			<td><?php
-			if (isset($fitvars[9])) {
-				echo $fitvars[9];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-		<tr>
-			<td>Paddle Style:</td>
-			<td><?php
-			if (isset($fitvars[10])) {
-				echo $fitvars[10];
-			}
-			else {
-				echo 'Fit Profile Data Not found!';
-			}
-			?></td>
-		</tr>
-	</tbody>
-</table>
-<h2>Cut Instructions:</h2>
-<?php 
-if (isset($fitvars[11]) && isset($fitvars[12]) && isset($fitvars[13])) {
-	returnBladeCuttAttributes($totalpaddlelength,$pbladeType,$bladesize);
-} ?>
 <?php if ( $wpo_wcpdf->get_footer() ): ?>
 	<div id="footer">
 		<?php $wpo_wcpdf->footer(); ?>

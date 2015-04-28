@@ -2,10 +2,10 @@
 
 function returnBladeCuttAttributes($totalPaddleLength,$pbladeType,$bladeSize) {
 	
-	if ($pbladeType == 'Surf') {
+	if ($pbladeType == 'surf') {
 		$isSurfBlade = true;
 	}
-	else if ($pbladeType == 'Race') {
+	else if ($pbladeType == 'race') {
 		$isRaceBlade = true;
 	}
 
@@ -1252,10 +1252,11 @@ function returnBladeCuttAttributes($totalPaddleLength,$pbladeType,$bladeSize) {
 		}
 
 	}
-	echo '<ul style="padding-top:25px;">';
-	echo '<li>Blade Cut: '.$blade_end.'</li>';
-	echo '<li>Handle Cut: '.$handle_end.'</li>';
-	echo '<li>Shaft Design: '.$shaftDesign.'</li>';
-	echo '</ul>';
+	echo '<dt>Blade Cut:</dt>';
+	echo '<dd>'.$blade_end.'</dd>';
+	echo '<dt>Handle Cut:</dt>';
+	echo '<dd>'.$handle_end.'</dd>';
+	echo '<dt>Shaft Design:</dt>';
+	echo '<dd>'.$shaftDesign.'</dd>';
 }
 ?>
